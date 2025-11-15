@@ -1,0 +1,47 @@
+{
+  "theme": {
+    "dark": {
+      "color": {
+        "primary": { "value": "{color.blue.500.value}" },
+        "primaryHover": { "value": "{color.blue.400.value}" },
+        "secondary": { "value": "{color.slate.400.value}" },
+        "success": { "value": "{color.green.500.value}" },
+        "background": { "value": "{color.slate.900.value}" },
+        "surface": { "value": "{color.slate.800.value}" },
+        "border": { "value": "{color.slate.700.value}" },
+        "text": {
+          "primary": { "value": "{color.slate.100.value}" },
+          "secondary": { "value": "{color.slate.400.value}" },
+          "inverse": { "value": "{color.slate.900.value}" }
+        },
+        "button": {
+          "primary": {
+            "background": { "value": "{color.blue.600.value}" },
+            "backgroundHover": { "value": "{color.blue.500.value}" },
+            "text": { "value": "{color.white.value}" }
+          },
+          "secondary": {
+            "background": { "value": "transparent" },
+            "backgroundHover": { "value": "{color.slate.700.value}" },
+            "border": { "value": "{color.slate.600.value}" },
+            "text": { "value": "{color.slate.200.value}" }
+          }
+        },
+        "tag": {
+          "industry": {
+            "background": { "value": "{color.blue.900.value}" },
+            "text": { "value": "{color.blue.300.value}" }
+          },
+          "style": {
+            "background": { "value": "{color.slate.700.value}" },
+            "text": { "value": "{color.slate.300.value}" }
+          }
+        }
+      },
+      "shadow": {
+        "card": { "value": "0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2)" },
+        "cardHover": { "value": "0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2)" }
+      }
+    }
+  }
+}

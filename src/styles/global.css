@@ -1,0 +1,25 @@
+@import './tokens/variables.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-sans);
+  background-color: var(--theme-light-color-background);
+  color: var(--theme-light-color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--theme-dark-color-background);
+  color: var(--theme-dark-color-text-primary);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

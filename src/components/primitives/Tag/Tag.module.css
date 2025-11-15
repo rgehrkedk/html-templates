@@ -1,0 +1,30 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-sans);
+  border-radius: var(--radius-md);
+}
+
+.industry {
+  background-color: var(--theme-light-color-tag-industry-background);
+  color: var(--theme-light-color-tag-industry-text);
+}
+
+.style {
+  background-color: var(--theme-light-color-tag-style-background);
+  color: var(--theme-light-color-tag-style-text);
+}
+
+/* Dark theme */
+[data-theme="dark"] .industry {
+  background-color: var(--theme-dark-color-tag-industry-background);
+  color: var(--theme-dark-color-tag-industry-text);
+}
+
+[data-theme="dark"] .style {
+  background-color: var(--theme-dark-color-tag-style-background);
+  color: var(--theme-dark-color-tag-style-text);
+}
