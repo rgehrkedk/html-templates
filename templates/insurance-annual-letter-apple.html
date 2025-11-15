@@ -24,35 +24,35 @@
             background: linear-gradient(135deg, #e8f0fe 0%, #f8f9fa 50%, #fef5e7 100%);
             background-attachment: fixed;
             color: #1d1d1f;
-            line-height: 1.47059;
-            font-size: 17px;
+            line-height: 1.4;
+            font-size: 15px;
             font-weight: 400;
             letter-spacing: -0.022em;
         }
 
         .page-wrapper {
             min-height: 100vh;
-            padding: 60px 20px;
+            padding: 30px 16px;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 980px;
             margin: 0 auto;
         }
 
         /* Hero Section - Liquid Glass Effect */
         .hero {
             text-align: center;
-            margin-bottom: 80px;
-            padding: 80px 40px;
-            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            padding: 50px 32px;
+            background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(40px) saturate(180%);
             -webkit-backdrop-filter: blur(40px) saturate(180%);
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.85);
             box-shadow:
-                0 8px 32px rgba(0, 0, 0, 0.08),
-                0 1px 0 rgba(255, 255, 255, 0.9) inset,
+                0 6px 24px rgba(0, 0, 0, 0.08),
+                0 1px 0 rgba(255, 255, 255, 0.95) inset,
                 0 -1px 0 rgba(0, 0, 0, 0.02) inset;
             position: relative;
             overflow: hidden;
@@ -75,45 +75,45 @@
         }
 
         .hero h1 {
-            font-size: 80px;
+            font-size: 56px;
             font-weight: 700;
             letter-spacing: -0.03em;
-            margin-bottom: 16px;
-            line-height: 1.05;
-            background: linear-gradient(135deg, #1d1d1f 0%, #4a4a4a 100%);
+            margin-bottom: 10px;
+            line-height: 1;
+            background: linear-gradient(135deg, #1d1d1f 0%, #3a3a3c 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .hero .name {
-            font-size: 32px;
+            font-size: 21px;
             font-weight: 500;
-            color: #6e6e73;
+            color: #424245;
             letter-spacing: -0.02em;
         }
 
         /* Stats Section - Floating Cards */
         .stats-section {
-            margin-bottom: 80px;
+            margin-bottom: 40px;
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.65);
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(30px) saturate(150%);
             -webkit-backdrop-filter: blur(30px) saturate(150%);
-            padding: 48px 32px;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            padding: 32px 24px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
             box-shadow:
-                0 12px 40px rgba(0, 0, 0, 0.06),
-                0 1px 0 rgba(255, 255, 255, 0.8) inset;
+                0 8px 28px rgba(0, 0, 0, 0.06),
+                0 1px 0 rgba(255, 255, 255, 0.85) inset;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
@@ -126,79 +126,79 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
         }
 
         .stat-card:hover {
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-6px) scale(1.02);
             box-shadow:
-                0 24px 60px rgba(0, 0, 0, 0.12),
-                0 1px 0 rgba(255, 255, 255, 0.9) inset;
-            border-color: rgba(255, 255, 255, 0.9);
+                0 16px 48px rgba(0, 0, 0, 0.12),
+                0 1px 0 rgba(255, 255, 255, 0.95) inset;
+            border-color: rgba(255, 255, 255, 0.95);
         }
 
         .stat-number {
-            font-size: 72px;
+            font-size: 52px;
             font-weight: 700;
             letter-spacing: -0.04em;
             line-height: 1;
-            margin-bottom: 12px;
-            background: linear-gradient(135deg, #1d1d1f 0%, #6e6e73 100%);
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #1d1d1f 0%, #424245 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .stat-label {
-            font-size: 17px;
-            color: #6e6e73;
+            font-size: 15px;
+            color: #424245;
             font-weight: 500;
-            letter-spacing: -0.022em;
+            letter-spacing: -0.02em;
         }
 
         /* Section Header */
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 32px;
         }
 
         .section-header .eyebrow {
-            font-size: 17px;
+            font-size: 14px;
             font-weight: 600;
-            color: #6e6e73;
+            color: #424245;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .section-header h2 {
-            font-size: 56px;
+            font-size: 40px;
             font-weight: 700;
             letter-spacing: -0.03em;
             color: #1d1d1f;
-            line-height: 1.07;
+            line-height: 1.1;
         }
 
         /* Coverage Cards - Liquid Glass */
         .coverage-section {
-            margin-bottom: 80px;
+            margin-bottom: 40px;
         }
 
         .coverage-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .coverage-card {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.65);
             backdrop-filter: blur(25px) saturate(140%);
             -webkit-backdrop-filter: blur(25px) saturate(140%);
-            border-radius: 28px;
-            padding: 44px 36px;
-            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 22px;
+            padding: 32px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.75);
             box-shadow:
-                0 16px 48px rgba(0, 0, 0, 0.08),
+                0 12px 36px rgba(0, 0, 0, 0.08),
                 0 1px 0 rgba(255, 255, 255, 0.9) inset,
                 0 0 0 0.5px rgba(0, 0, 0, 0.04);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -212,63 +212,63 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 120px;
+            height: 100px;
             background: radial-gradient(ellipse at top, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
             pointer-events: none;
         }
 
         .coverage-card:hover {
-            transform: translateY(-12px);
+            transform: translateY(-8px);
             box-shadow:
-                0 32px 80px rgba(0, 0, 0, 0.14),
+                0 24px 64px rgba(0, 0, 0, 0.14),
                 0 1px 0 rgba(255, 255, 255, 1) inset,
                 0 0 0 0.5px rgba(0, 0, 0, 0.06);
             border-color: rgba(255, 255, 255, 0.95);
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(255, 255, 255, 0.8);
         }
 
         .coverage-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.02) 100%);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             position: relative;
         }
 
         .coverage-icon::after {
             content: '';
             position: absolute;
-            inset: 8px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+            inset: 7px;
+            border-radius: 7px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.45) 100%);
         }
 
         .coverage-card h3 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
             letter-spacing: -0.02em;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #1d1d1f;
         }
 
         .coverage-policy {
-            font-size: 15px;
-            color: #86868b;
-            margin-bottom: 32px;
-            letter-spacing: -0.02em;
+            font-size: 13px;
+            color: #424245;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
         }
 
         .coverage-details {
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
         .coverage-detail {
             display: flex;
             justify-content: space-between;
-            padding: 14px 0;
-            border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
-            font-size: 15px;
+            padding: 10px 0;
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+            font-size: 14px;
         }
 
         .coverage-detail:last-child {
@@ -276,7 +276,7 @@
         }
 
         .coverage-detail-label {
-            color: #86868b;
+            color: #424245;
             font-weight: 400;
         }
 
@@ -287,12 +287,12 @@
         }
 
         .coverage-price {
-            padding-top: 24px;
-            border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+            padding-top: 20px;
+            border-top: 0.5px solid rgba(0, 0, 0, 0.12);
         }
 
         .coverage-price-amount {
-            font-size: 40px;
+            font-size: 32px;
             font-weight: 700;
             letter-spacing: -0.03em;
             color: #1d1d1f;
@@ -300,33 +300,33 @@
         }
 
         .coverage-price-label {
-            font-size: 15px;
-            color: #86868b;
-            margin-top: 6px;
+            font-size: 13px;
+            color: #424245;
+            margin-top: 5px;
         }
 
         /* Benefits Section */
         .benefits-section {
-            margin-bottom: 80px;
+            margin-bottom: 40px;
         }
 
         .benefits-container {
-            background: rgba(255, 255, 255, 0.55);
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(35px) saturate(160%);
             -webkit-backdrop-filter: blur(35px) saturate(160%);
-            border-radius: 30px;
-            padding: 64px 48px;
-            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 24px;
+            padding: 44px 36px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
             box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.1),
+                0 14px 48px rgba(0, 0, 0, 0.1),
                 0 1px 0 rgba(255, 255, 255, 0.9) inset;
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 48px;
-            margin-top: 48px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
         }
 
         .benefit {
@@ -334,121 +334,121 @@
         }
 
         .benefit-icon {
-            width: 72px;
-            height: 72px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background: rgba(0, 0, 0, 0.04);
-            margin: 0 auto 24px;
+            background: rgba(0, 0, 0, 0.05);
+            margin: 0 auto 18px;
             position: relative;
         }
 
         .benefit-icon::after {
             content: '';
             position: absolute;
-            inset: 12px;
+            inset: 10px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.45) 100%);
         }
 
         .benefit h3 {
-            font-size: 21px;
+            font-size: 19px;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #1d1d1f;
             letter-spacing: -0.02em;
         }
 
         .benefit p {
-            font-size: 17px;
-            color: #6e6e73;
-            line-height: 1.47059;
-            letter-spacing: -0.022em;
+            font-size: 15px;
+            color: #424245;
+            line-height: 1.4;
+            letter-spacing: -0.02em;
         }
 
         /* Footer */
         .footer {
             text-align: center;
-            padding: 60px 40px;
-            background: rgba(255, 255, 255, 0.5);
+            padding: 44px 32px;
+            background: rgba(255, 255, 255, 0.55);
             backdrop-filter: blur(30px) saturate(150%);
             -webkit-backdrop-filter: blur(30px) saturate(150%);
-            border-radius: 26px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.65);
             box-shadow:
-                0 12px 40px rgba(0, 0, 0, 0.07),
-                0 1px 0 rgba(255, 255, 255, 0.8) inset;
+                0 10px 32px rgba(0, 0, 0, 0.07),
+                0 1px 0 rgba(255, 255, 255, 0.85) inset;
         }
 
         .footer h3 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 600;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             color: #1d1d1f;
             letter-spacing: -0.02em;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 700px;
-            margin: 0 auto 40px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            max-width: 650px;
+            margin: 0 auto 28px;
         }
 
         .contact-item {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            padding: 24px 20px;
-            border-radius: 16px;
-            border: 0.5px solid rgba(255, 255, 255, 0.7);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            padding: 20px 16px;
+            border-radius: 14px;
+            border: 0.5px solid rgba(255, 255, 255, 0.75);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
         }
 
         .contact-label {
-            font-size: 13px;
-            color: #86868b;
-            margin-bottom: 6px;
-            font-weight: 500;
+            font-size: 12px;
+            color: #424245;
+            margin-bottom: 5px;
+            font-weight: 600;
             letter-spacing: 0.06em;
             text-transform: uppercase;
         }
 
         .contact-value {
-            font-size: 17px;
+            font-size: 15px;
             color: #1d1d1f;
             font-weight: 500;
         }
 
         .footer-legal {
-            font-size: 13px;
-            color: #86868b;
-            margin-top: 32px;
-            padding-top: 24px;
-            border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+            font-size: 12px;
+            color: #424245;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 0.5px solid rgba(0, 0, 0, 0.1);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
-                padding: 60px 24px;
-                margin-bottom: 60px;
+                padding: 40px 24px;
+                margin-bottom: 32px;
             }
 
             .hero h1 {
-                font-size: 48px;
+                font-size: 40px;
             }
 
             .hero .name {
-                font-size: 24px;
+                font-size: 18px;
             }
 
             .section-header h2 {
-                font-size: 36px;
+                font-size: 32px;
             }
 
             .stat-number {
-                font-size: 56px;
+                font-size: 44px;
             }
 
             .coverage-grid,
@@ -457,15 +457,21 @@
             }
 
             .benefits-container {
-                padding: 40px 24px;
+                padding: 32px 24px;
             }
 
             .benefits-grid {
-                gap: 40px;
+                gap: 28px;
             }
 
             .page-wrapper {
-                padding: 40px 16px;
+                padding: 24px 12px;
+            }
+
+            .stats-section,
+            .coverage-section,
+            .benefits-section {
+                margin-bottom: 32px;
             }
         }
 
@@ -480,23 +486,42 @@
             .coverage-card,
             .benefits-container,
             .footer {
-                background: rgba(29, 29, 31, 0.7);
-                border-color: rgba(255, 255, 255, 0.15);
+                background: rgba(29, 29, 31, 0.75);
+                border-color: rgba(255, 255, 255, 0.18);
             }
 
             .hero h1,
             .section-header h2,
             .coverage-card h3,
             .stat-number {
-                background: linear-gradient(135deg, #f5f5f7 0%, #a1a1a6 100%);
+                background: linear-gradient(135deg, #f5f5f7 0%, #d1d1d6 100%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
             }
 
+            .stat-label,
+            .section-header .eyebrow,
+            .coverage-policy,
+            .coverage-detail-label,
+            .coverage-price-label,
+            .benefit p,
+            .contact-label,
+            .footer-legal {
+                color: #d1d1d6;
+            }
+
+            .hero .name,
+            .coverage-detail-value,
+            .benefit h3,
+            .footer h3,
+            .contact-value {
+                color: #f5f5f7;
+            }
+
             .contact-item {
-                background: rgba(50, 50, 52, 0.6);
-                border-color: rgba(255, 255, 255, 0.1);
+                background: rgba(50, 50, 52, 0.7);
+                border-color: rgba(255, 255, 255, 0.12);
             }
         }
     </style>
