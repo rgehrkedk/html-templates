@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Årsbrev 2024 - Tryg Forsikring</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #000000;
+            background-color: #ffffff;
+            padding: 0;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 80px 120px 80px;
+        }
+
+        /* Header - Swiss Typography Style */
+        .header {
+            margin-bottom: 80px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #000000;
+        }
+
+        .header-meta {
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #666666;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .header .year {
+            font-size: 48px;
+            font-weight: 300;
+            line-height: 1.1;
+            color: #666666;
+        }
+
+        /* Grid System */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .col-12 {
+            grid-column: span 12;
+        }
+
+        .col-8 {
+            grid-column: span 8;
+        }
+
+        .col-6 {
+            grid-column: span 6;
+        }
+
+        .col-4 {
+            grid-column: span 4;
+        }
+
+        .col-3 {
+            grid-column: span 3;
+        }
+
+        /* Intro Section */
+        .intro {
+            margin-bottom: 80px;
+        }
+
+        .intro-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            color: #000000;
+        }
+
+        .intro p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 40px;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #000000;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        /* Insurance Cards - Swiss Grid Style */
+        .insurance-item {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .insurance-item:last-child {
+            border-bottom: none;
+        }
+
+        .insurance-header {
+            margin-bottom: 32px;
+        }
+
+        .insurance-type {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            color: #666666;
+        }
+
+        .insurance-title {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .insurance-policy {
+            font-size: 13px;
+            font-weight: 400;
+            color: #666666;
+        }
+
+        /* Detail Grid */
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px 48px;
+        }
+
+        .detail-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .detail-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            color: #666666;
+        }
+
+        .detail-value {
+            font-size: 16px;
+            font-weight: 400;
+            color: #000000;
+        }
+
+        .detail-value.highlight {
+            font-weight: 700;
+        }
+
+        /* Stats Section - Swiss Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin: 60px 0;
+            padding: 60px 0;
+            border-top: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 12px;
+            color: #000000;
+            letter-spacing: -1px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #666666;
+            line-height: 1.4;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background-color: #f5f5f5;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .info-box-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            color: #000000;
+        }
+
+        .info-box p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        /* Lists - Swiss Style */
+        .swiss-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .swiss-list li {
+            padding: 24px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .swiss-list li:last-child {
+            border-bottom: none;
+        }
+
+        .list-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #000000;
+        }
+
+        .list-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        /* Collapsible Sections */
+        .collapsible {
+            margin-bottom: 40px;
+        }
+
+        .collapsible-header {
+            padding: 24px 0;
+            border-bottom: 1px solid #000000;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: opacity 0.2s;
+        }
+
+        .collapsible-header:hover {
+            opacity: 0.7;
+        }
+
+        .collapsible-title {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .collapsible-icon {
+            font-size: 24px;
+            font-weight: 300;
+            color: #000000;
+        }
+
+        .collapsible-content {
+            padding: 40px 0;
+            display: none;
+        }
+
+        details[open] .collapsible-content {
+            display: block;
+        }
+
+        details[open] .collapsible-icon::before {
+            content: '−';
+        }
+
+        .collapsible-icon::before {
+            content: '+';
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 120px;
+            padding-top: 60px;
+            border-top: 2px solid #000000;
+        }
+
+        .footer-section {
+            margin-bottom: 40px;
+        }
+
+        .footer-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            color: #000000;
+        }
+
+        .footer-content {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #333333;
+        }
+
+        .footer-meta {
+            font-size: 11px;
+            color: #999999;
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 24px 60px 24px;
+            }
+
+            .header {
+                margin-bottom: 60px;
+            }
+
+            .header h1,
+            .header .year {
+                font-size: 36px;
+            }
+
+            .section-header {
+                margin-top: 60px;
+            }
+
+            .section-header h2 {
+                font-size: 24px;
+            }
+
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+                padding: 40px 0;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .col-8,
+            .col-6,
+            .col-4,
+            .col-3 {
+                grid-column: span 1;
+            }
+
+            .info-box {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ============================================
+             HEADER SEKTION
+             Tilpas: Firmanavn, år
+             ============================================ -->
+        <header class="header">
+            <div class="header-meta">Tryg Forsikring A/S</div>
+            <h1>Årsbrev</h1>
+            <div class="year">2024</div>
+        </header>
+
+        <!-- ============================================
+             INTRO SEKTION
+             Tilpas: Kundenavn, år, personlig besked
+             ============================================ -->
+        <section class="intro">
+            <div class="intro-label">Til Henrik Jensen</div>
+            <p>Tak fordi du vælger at være kunde hos os. 2024 har været et begivenhedsrigt år, og vi er glade for at kunne give dig et overblik over dine forsikringer og vigtige informationer for det kommende år.</p>
+            <p>Du har nu været kunde hos os i <strong>12 år</strong>, og vi sætter stor pris på dit langvarige samarbejde.</p>
+        </section>
+
+        <!-- ============================================
+             FORSIKRINGSOVERSIGT
+             Tilpas: Forsikringstyper, beløb, detaljer
+             ============================================ -->
+        <section class="section-header">
+            <h2>Dine forsikringer</h2>
+        </section>
+
+        <!-- INDBOFORSIKRING -->
+        <article class="insurance-item">
+            <div class="insurance-header">
+                <div class="insurance-type">01 / Indboforsikring</div>
+                <h3 class="insurance-title">Indboforsikring med familiedækning</h3>
+                <div class="insurance-policy">Policenummer IB-2024-891234</div>
+            </div>
+
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <div class="detail-label">Adresse</div>
+                    <div class="detail-value">Søndergade 42, 3. tv<br>8000 Aarhus C</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Forsikringssum</div>
+                    <div class="detail-value highlight">1.200.000 kr.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Selvrisiko</div>
+                    <div class="detail-value">2.500 kr.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Årlig præmie</div>
+                    <div class="detail-value highlight">4.280 kr.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Rabat</div>
+                    <div class="detail-value">18% (tryghedspakke + loyalitet)</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Dækning</div>
+                    <div class="detail-value">Brand, indbrud, vandskade, el-skade, ansvar</div>
+                </div>
+            </div>
+        </article>
+
+        <!-- BILFORSIKRING -->
+        <article class="insurance-item">
+            <div class="insurance-header">
+                <div class="insurance-type">02 / Bilforsikring</div>
+                <h3 class="insurance-title">Kasko Komplet - VW Golf 1.5 TSI</h3>
+                <div class="insurance-policy">Policenummer BF-2024-567890</div>
+            </div>
+
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <div class="detail-label">Registreringsnummer</div>
+                    <div class="detail-value highlight">AA 12 345</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Årgang</div>
+                    <div class="detail-value">2021</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Dækning</div>
+                    <div class="detail-value">Kasko Komplet</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Selvrisiko (kasko)</div>
+                    <div class="detail-value">4.000 kr.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Årlig præmie</div>
+                    <div class="detail-value highlight">7.240 kr.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Skadefri bonus</div>
+                    <div class="detail-value">12 år (25% rabat)</div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ULYKKESFORSIKRING -->
+        <article class="insurance-item">
+            <div class="insurance-header">
+                <div class="insurance-type">03 / Ulykkesforsikring</div>
+                <h3 class="insurance-title">Familie Ulykkesforsikring Plus</h3>
+                <div class="insurance-policy">Policenummer UF-2024-445566</div>
+            </div>
+
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <div class="detail-label">Dækker</div>
+                    <div class="detail-value">Henrik Jensen + Maria Jensen + 2 børn</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Invaliditetssum (voksen)</div>
+                    <div class="detail-value highlight">2.000.000 kr.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Invaliditetssum (barn)</div>
+                    <div class="detail-value highlight">1.000.000 kr.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Dødsfaldssum</div>
+                    <div class="detail-value">100.000 kr.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Årlig præmie</div>
+                    <div class="detail-value highlight">2.890 kr.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Dækning</div>
+                    <div class="detail-value">Døgnet rundt, Danmark og udlandet</div>
+                </div>
+            </div>
+        </article>
+
+        <!-- REJSEFORSIKRING -->
+        <article class="insurance-item">
+            <div class="insurance-header">
+                <div class="insurance-type">04 / Rejseforsikring</div>
+                <h3 class="insurance-title">Helårsforsikring Verden</h3>
+                <div class="insurance-policy">Policenummer RF-2024-778899</div>
+            </div>
+
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <div class="detail-label">Dækker</div>
+                    <div class="detail-value">Hele familien (4 personer)</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Område</div>
+                    <div class="detail-value">Hele verden (inkl. USA)</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Max. rejselængde</div>
+                    <div class="detail-value">90 dage pr. rejse</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Selvrisiko</div>
+                    <div class="detail-value">0 kr.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Årlig præmie</div>
+                    <div class="detail-value highlight">3.650 kr.</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Dækning</div>
+                    <div class="detail-value">Sygdom, hjemtransport, afbestilling, bagage</div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ============================================
+             STATISTIK SEKTION
+             Tilpas: Antal skader, præmier, besparelser
+             ============================================ -->
+        <section class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Skadesanmeldelser i 2024</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">18.060</div>
+                <div class="stat-label">Samlet årlig præmie (kr.)</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4.120</div>
+                <div class="stat-label">Din besparelse i rabatter (kr.)</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Kunde hos os (år)</div>
+            </div>
+        </section>
+
+        <div class="info-box">
+            <div class="info-box-title">Tillykke</div>
+            <p>Du har været skadefri hele 2024. Din skadefri bonus på bilforsikringen er nu på imponerende 12 år, hvilket giver dig 25% rabat. Tak for din omhu og ansvarlige adfærd i trafikken.</p>
+        </div>
+
+        <!-- ============================================
+             INFORMATIONER & ÆNDRINGER
+             Tilpas: Prisjusteringer, nye fordele, tips
+             ============================================ -->
+        <section class="section-header">
+            <h2>Vigtige informationer for 2025</h2>
+        </section>
+
+        <div class="info-box" style="background-color: #000000; color: #ffffff; margin-bottom: 60px;">
+            <div class="info-box-title" style="color: #ffffff;">Prisjustering pr. 1. januar 2025</div>
+            <p style="color: #ffffff;">På grund af stigende omkostninger i branchen, vil dine forsikringer blive reguleret med i gennemsnit 2,8%. Din nye samlede årspræmie bliver 18.565 kr. Du kan se de opdaterede priser i din selvbetjening fra d. 15. december.</p>
+        </div>
+
+        <!-- Nye fordele -->
+        <div class="collapsible">
+            <h3 class="collapsible-title" style="font-size: 24px; margin-bottom: 32px;">Nye fordele i 2025</h3>
+
+            <ul class="swiss-list">
+                <li>
+                    <div class="list-title">Gratis retshjælp</div>
+                    <div class="list-content">Nu inkluderer din indboforsikring gratis retshjælp op til 50.000 kr. ved tvister.</div>
+                </li>
+                <li>
+                    <div class="list-title">Cyberforsikring</div>
+                    <div class="list-content">Få dækning ved identitetstyveri og hjælp til IT-sikkerhed - nu inkluderet uden ekstra betaling.</div>
+                </li>
+                <li>
+                    <div class="list-title">Klimatilpasning</div>
+                    <div class="list-content">Vi har udvidet dækningen for vandskader som følge af ekstremregn.</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Personlige anbefalinger -->
+        <div class="collapsible" style="margin-top: 60px;">
+            <h3 class="collapsible-title" style="font-size: 24px; margin-bottom: 32px;">Personlige anbefalinger til dig</h3>
+
+            <ul class="swiss-list">
+                <li>
+                    <div class="list-title">Opdater din forsikringssum</div>
+                    <div class="list-content">Med børnene blevet større, har I måske investeret i nye computere eller musikinstrumenter? Sørg for at din indboforsikringssum afspejler den aktuelle værdi.</div>
+                </li>
+                <li>
+                    <div class="list-title">Tænk på pension</div>
+                    <div class="list-content">Som 42-årig er det et godt tidspunkt at se på pensionsforsikring. Kontakt os for en uforpligtende snak.</div>
+                </li>
+                <li>
+                    <div class="list-title">Elcykel? Tjek din dækning</div>
+                    <div class="list-content">Mange vælger elcykel i dag. Husk at anmelde værdifulde cykler over 25.000 kr. for fuld dækning.</div>
+                </li>
+                <li>
+                    <div class="list-title">Download vores app</div>
+                    <div class="list-content">Få hurtig adgang til forsikringsoversigt, anmeld skader og kontakt os direkte i appen.</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Gode råd -->
+        <div class="collapsible" style="margin-top: 60px;">
+            <h3 class="collapsible-title" style="font-size: 24px; margin-bottom: 32px;">Gode råd til vinteren 2025</h3>
+
+            <ul class="swiss-list">
+                <li>
+                    <div class="list-title">Tjek vandinstallationer</div>
+                    <div class="list-content">Frost kan give store vandskader. Tjek radiatorer, vandhaner og isolering før frosten sætter ind.</div>
+                </li>
+                <li>
+                    <div class="list-title">Ryd tagrender</div>
+                    <div class="list-content">Blade og snavs kan blokere afløb og give vandskader. Ryd tagrender inden vinterens regn og sne.</div>
+                </li>
+                <li>
+                    <div class="list-title">Skift til vinterdæk</div>
+                    <div class="list-content">Husk at skifte til vinterdæk senest 1. november. Det er ikke kun lovpligtigt ved snefald - det reducerer også ulykkesrisikoen betydeligt.</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="grid">
+                <div class="col-12">
+                    <div class="footer-section">
+                        <div class="footer-title">Kontakt</div>
+                        <div class="footer-content">
+                            Har du spørgsmål til dit årsbrev eller dine forsikringer?
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="footer-title">Kundeservice</div>
+                    <div class="footer-content">70 11 20 20</div>
+                </div>
+
+                <div class="col-4">
+                    <div class="footer-title">E-mail</div>
+                    <div class="footer-content">kundeservice@tryg.dk</div>
+                </div>
+
+                <div class="col-4">
+                    <div class="footer-title">Selvbetjening</div>
+                    <div class="footer-content">www.tryg.dk/mit-tryg</div>
+                </div>
+            </div>
+
+            <div class="footer-meta">
+                © 2025 Tryg Forsikring A/S | CVR-nr. 24260666
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
