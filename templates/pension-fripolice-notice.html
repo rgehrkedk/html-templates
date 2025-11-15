@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigtig information om din pensionsordning - Forsikring Nord</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #2d3436;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 3rem 1.5rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 3px;
+            box-shadow:
+                0 1px 3px rgba(0, 0, 0, 0.04),
+                0 12px 48px rgba(99, 110, 114, 0.08);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Decorative left margin for annotations */
+        .content-wrapper {
+            margin-left: 120px;
+            padding: 3rem 3rem 3rem 0;
+            position: relative;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+            padding: 3rem 3rem 2.5rem 3rem;
+            margin-left: 120px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .header-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #868e96;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .header h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            color: #212529;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Decorative hand-drawn line under H1 */
+        .header h1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -12px;
+            width: 100%;
+            height: 3px;
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='8' viewBox='0 0 200 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,4 Q10,1 20,4 T40,4 T60,4 T80,4 T100,4 T120,4 T140,4 T160,4 T180,4 T200,4' stroke='%2374b9ff' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            opacity: 0.6;
+        }
+
+        .header .subtitle {
+            font-size: 1.125rem;
+            color: #495057;
+            margin-top: 1.75rem;
+            line-height: 1.7;
+        }
+
+        /* Margin Annotations */
+        .margin-note {
+            position: absolute;
+            left: -120px;
+            width: 100px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #74b9ff;
+            font-weight: 700;
+            text-align: right;
+            padding-right: 1rem;
+        }
+
+        .margin-note::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #74b9ff;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        /* Intro Section */
+        .intro {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #f1f3f5;
+        }
+
+        .intro p {
+            font-size: 1.05rem;
+            color: #495057;
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro strong {
+            color: #212529;
+            font-weight: 600;
+        }
+
+        /* Important Notice Box */
+        .notice-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f1f8ff 100%);
+            border-left: 4px solid #2196f3;
+            padding: 2rem;
+            border-radius: 0 6px 6px 0;
+            margin: 2.5rem 0;
+            position: relative;
+        }
+
+        .notice-box h3 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.3rem;
+            color: #1565c0;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .notice-box p {
+            color: #0d47a1;
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+        }
+
+        .notice-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .notice-date {
+            display: inline-block;
+            background: #1976d2;
+            color: white;
+            padding: 0.375rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.75rem;
+            color: #212529;
+            margin-bottom: 2rem;
+            margin-top: 3rem;
+            font-weight: 400;
+            letter-spacing: -0.3px;
+            position: relative;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        /* Decorative Bullets List */
+        .decorative-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .decorative-list li {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            color: #495057;
+        }
+
+        .decorative-list li::before {
+            content: '◐';
+            position: absolute;
+            left: 0;
+            color: #74b9ff;
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+
+        .decorative-list li strong {
+            color: #212529;
+            font-weight: 600;
+        }
+
+        /* Alternative decorative bullets */
+        .decorative-list.style-2 li::before {
+            content: '❧';
+            font-size: 1.1rem;
+        }
+
+        .decorative-list.style-3 li::before {
+            content: '✦';
+            font-size: 1rem;
+        }
+
+        /* Accordion Styles */
+        details {
+            margin-bottom: 1rem;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #ffffff;
+        }
+
+        details:hover {
+            border-color: #dee2e6;
+            box-shadow: 0 2px 12px rgba(99, 110, 114, 0.08);
+        }
+
+        details[open] {
+            border-color: #74b9ff;
+            box-shadow: 0 4px 16px rgba(116, 185, 255, 0.12);
+        }
+
+        summary {
+            padding: 1.5rem 2rem;
+            background: #f8f9fa;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #212529;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: '?';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #74b9ff 0%, #4dabf7 100%);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #74b9ff;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        details[open] summary {
+            background: linear-gradient(to right, #f1f8ff 0%, #ffffff 100%);
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        summary:hover {
+            background: #f1f8ff;
+        }
+
+        .accordion-content {
+            padding: 2rem;
+            background: #ffffff;
+            line-height: 1.8;
+            color: #495057;
+        }
+
+        .accordion-content p {
+            margin-bottom: 1rem;
+        }
+
+        .accordion-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .accordion-content strong {
+            color: #212529;
+        }
+
+        /* Comparison Box */
+        .comparison-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .comparison-column h4 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.15rem;
+            color: #212529;
+            margin-bottom: 1.25rem;
+            font-weight: 500;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .comparison-column.active h4 {
+            color: #1976d2;
+            border-bottom-color: #74b9ff;
+        }
+
+        .comparison-column.inactive h4 {
+            color: #868e96;
+            border-bottom-color: #dee2e6;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #fef9e7 100%);
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: 0 6px 6px 0;
+            margin: 2rem 0;
+        }
+
+        .info-box p {
+            color: #856404;
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-box strong {
+            color: #533f03;
+        }
+
+        /* Action Box */
+        .action-box {
+            background: linear-gradient(135deg, #d4edda 0%, #e7f5e9 100%);
+            border-left: 4px solid #28a745;
+            padding: 2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2.5rem 0;
+            position: relative;
+        }
+
+        .action-box h3 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.3rem;
+            color: #155724;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .action-box p {
+            color: #1e7e34;
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+        }
+
+        .action-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2.5rem 3rem;
+            margin-left: 120px;
+            text-align: left;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .footer p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+
+        .footer .contact {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .footer .contact p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer strong {
+            color: #495057;
+            font-weight: 600;
+        }
+
+        .footer-meta {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #dee2e6;
+            font-size: 0.75rem;
+            color: #868e96;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem 0.5rem;
+            }
+
+            .container {
+                border-radius: 0;
+            }
+
+            .content-wrapper,
+            .header,
+            .footer {
+                margin-left: 0;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .margin-note {
+                position: static;
+                width: auto;
+                text-align: left;
+                padding: 0;
+                margin-bottom: 1rem;
+                display: block;
+            }
+
+            .margin-note::before {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .comparison-box {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            summary {
+                padding: 1.25rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .accordion-content {
+                padding: 1.5rem;
+            }
+
+            .decorative-list li {
+                padding-left: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ============================================
+             HEADER SEKTION
+             ============================================ -->
+        <header class="header">
+            <div class="header-label">Forsikring Nord Pension</div>
+            <h1>Vigtig information om din pensionsordning</h1>
+            <p class="subtitle">Vi vil informere dig om, hvad der sker, hvis der ikke fortsat indbetales til din pension</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- ============================================
+                 INTRO
+                 ============================================ -->
+            <section class="intro">
+                <span class="margin-note">Kort fortalt</span>
+                <p>Kære <strong>Henrik Jensen</strong>,</p>
+                <p>Vi skriver til dig, fordi vi kan se, at der i en periode ikke er blevet indbetalt til din pensionsordning hos os. Denne besked handler om, hvad det betyder for din fremtidige dækning.</p>
+            </section>
+
+            <!-- ============================================
+                 HOVEDBUDSKAB
+                 ============================================ -->
+            <div class="notice-box">
+                <h3>Automatisk overgang til præmiefri ordning</h3>
+                <p><strong>Hvis der fortsat ikke indbetales til din pensionsordning senest den 1. februar 2027</strong>, overgår din ordning automatisk til en præmiefri ordning (også kaldet fripolice).</p>
+                <p>Dette er en lovpligtig ordning, der sikrer, at de penge, du allerede har indbetalt, forbliver investeret til din pension.</p>
+                <span class="notice-date">Frist: 1. februar 2027</span>
+            </div>
+
+            <!-- ============================================
+                 HVAD BETYDER DET?
+                 ============================================ -->
+            <h2 class="section-title">Hvad betyder det i praksis?</h2>
+            <span class="margin-note">Resumé</span>
+
+            <div class="comparison-box">
+                <div class="comparison-column inactive">
+                    <h4>Dette bortfalder:</h4>
+                    <ul class="decorative-list style-2">
+                        <li><strong>Forsikring ved tab af erhvervsevne</strong> – Dækning hvis du bliver ude af stand til at arbejde</li>
+                        <li><strong>Forsikring ved kritisk sygdom</strong> – Engangsbeløb ved alvorlig sygdom</li>
+                        <li><strong>Forsikring ved død</strong> – Udbetaling til dine efterladte</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-column active">
+                    <h4>Dette bevares:</h4>
+                    <ul class="decorative-list style-3">
+                        <li><strong>Din opsparede pension</strong> – Alle tidligere indbetalinger forbliver investeret</li>
+                        <li><strong>Afkast på opsparingen</strong> – Dine midler fortsætter med at blive forrentet</li>
+                        <li><strong>Udbetaling ved pension</strong> – Du modtager pension som planlagt, når du går på pension</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style="color: #495057; line-height: 1.8; margin-bottom: 2rem;">
+                Med andre ord: De penge, du allerede har sparet op, mister du ikke. Men de forsikringer, der beskytter dig og din familie, hvis noget uventet sker, vil ikke længere være aktive.
+            </p>
+
+            <!-- ============================================
+                 OFTE STILLEDE SPØRGSMÅL
+                 ============================================ -->
+            <h2 class="section-title">Ofte stillede spørgsmål</h2>
+            <span class="margin-note">Spørgsmål</span>
+
+            <details>
+                <summary>Hvad er en fripolice?</summary>
+                <div class="accordion-content">
+                    <p>En fripolice (præmiefri ordning) er en pensionsordning, hvor du ikke længere indbetaler, men hvor dine allerede opsparede midler fortsætter med at være investeret.</p>
+                    <p><strong>Kort sagt:</strong> Dine penge bliver stående og vokser, men du får ikke nye forsikringer eller dækninger.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Mister jeg mine opsparede penge?</summary>
+                <div class="accordion-content">
+                    <p><strong>Nej, absolut ikke.</strong> Alle de penge, du har indbetalt til din pension gennem årene, forbliver i din ordning. De bliver fortsat investeret, og du vil modtage dem som pension, når du går på pension.</p>
+                    <p>Det eneste, der ændrer sig, er at de forsikringsdækninger, der kræver løbende indbetalinger, vil bortfalde.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Kan jeg stadig få udbetalt min pension senere?</summary>
+                <div class="accordion-content">
+                    <p><strong>Ja.</strong> Din opsparing forbliver intakt, og du vil stadig modtage pension, når du når pensionsalderen. Det eneste, der ændrer sig, er størrelsen – da der ikke kommer nye indbetalinger, vil din fremtidige pension være baseret på det, du allerede har sparet op.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Hvad sker der, hvis jeg bliver syg eller dør?</summary>
+                <div class="accordion-content">
+                    <p>Hvis din ordning overgår til fripolice, vil forsikringerne ved kritisk sygdom, tab af erhvervsevne og død <strong>ikke længere være aktive</strong>.</p>
+                    <p>Det betyder, at hvis du bliver alvorligt syg, kommer ud for en ulykke, der gør dig uarbejdsdygtig, eller dør, vil der ikke blive udbetalt fra disse forsikringer. Din pensionsopsparing vil dog stadig være der.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Kan jeg genoptage indbetalingerne senere?</summary>
+                <div class="accordion-content">
+                    <p><strong>Ja, i de fleste tilfælde.</strong> Hvis du ønsker at genoptage indbetalingerne og få forsikringerne aktive igen, er det ofte muligt – men det kræver som regel en ny helbredsvurdering.</p>
+                    <p>Kontakt os, så hjælper vi dig med at se på mulighederne.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Hvad skal jeg gøre nu?</summary>
+                <div class="accordion-content">
+                    <p>Du har tre muligheder:</p>
+                    <ul class="decorative-list">
+                        <li><strong>Genoptag indbetalingerne</strong> – Så fortsætter alle dine forsikringer som normalt</li>
+                        <li><strong>Lad ordningen overgå til fripolice</strong> – Hvis du ikke ønsker at fortsætte med at indbetale</li>
+                        <li><strong>Kontakt os for rådgivning</strong> – Vi hjælper dig gerne med at finde den bedste løsning for dig</li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- ============================================
+                 HVAD KAN DU GØRE?
+                 ============================================ -->
+            <h2 class="section-title">Hvad kan du gøre?</h2>
+            <span class="margin-note">Handlemuligheder</span>
+
+            <div class="action-box">
+                <h3>Vil du fortsætte med at indbetale?</h3>
+                <p>Hvis du ønsker at fortsætte din pensionsopsparing og bevare alle dine forsikringer, skal du genoptage indbetalingerne senest <strong>1. februar 2027</strong>.</p>
+                <p><strong>Sådan gør du:</strong></p>
+                <ul class="decorative-list">
+                    <li>Log ind på <strong>forsikringnord.dk/min-side</strong> og genaktiver indbetalingerne</li>
+                    <li>Kontakt os på telefon <strong>70 11 22 33</strong></li>
+                    <li>Skriv til os på <strong>pension@forsikringnord.dk</strong></li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <p><strong>Har du brug for rådgivning?</strong></p>
+                <p>Vores pensionsrådgivere står klar til at hjælpe dig med at finde den bedste løsning for din situation. Ring eller skriv til os, så taler vi om dine muligheder.</p>
+            </div>
+
+            <!-- ============================================
+                 EKSEMPEL
+                 ============================================ -->
+            <h2 class="section-title">Et konkret eksempel</h2>
+            <span class="margin-note">Eksempel</span>
+
+            <p style="color: #495057; line-height: 1.8; margin-bottom: 1.5rem;">
+                <strong>Maria, 45 år</strong>, har indbetalt til sin pension i 15 år og har opsparet 850.000 kr. Hun mister sit job og stopper indbetalingerne.
+            </p>
+
+            <ul class="decorative-list">
+                <li><strong>Efter 1. februar 2027</strong> overgår hendes ordning til fripolice</li>
+                <li><strong>Hendes 850.000 kr. forbliver investeret</strong> og fortsætter med at vokse</li>
+                <li><strong>Når hun går på pension</strong>, får hun udbetalt de opsparede midler</li>
+                <li><strong>Men:</strong> Hvis hun i mellemtiden bliver syg eller dør, er forsikringerne ikke længere aktive</li>
+            </ul>
+
+            <p style="color: #495057; line-height: 1.8; margin-top: 1.5rem;">
+                Hvis Maria får et nyt job og ønsker at genoptage indbetalingerne, kan hun kontakte os for at få forsikringerne aktive igen.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Vi er her for at hjælpe dig. Kontakt os, hvis du har spørgsmål eller brug for vejledning.</p>
+            <div class="contact">
+                <p><strong>Pensionsrådgivning:</strong> 70 11 22 33 (hverdage 9-16)</p>
+                <p><strong>E-mail:</strong> pension@forsikringnord.dk</p>
+                <p><strong>Selvbetjening:</strong> www.forsikringnord.dk/min-side</p>
+            </div>
+            <div class="footer-meta">
+                © 2025 Forsikring Nord A/S · CVR-nr. 12345678
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
