@@ -23,6 +23,19 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build index.html
+        run: |
+          npm run build
+          if [ -n "$(git status --porcelain)" ]; then
+            git add index.html
+            git commit -m "Auto-update index.html with all templates"
+          fi
+
       - name: Merge to main
         run: |
           git fetch origin main:main || git checkout -b main

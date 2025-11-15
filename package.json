@@ -1,0 +1,17 @@
+{
+  "name": "html-templates",
+  "version": "1.0.0",
+  "description": "HTML templates til e-Boks beskeder",
+  "scripts": {
+    "build": "node build-index.js",
+    "prebuild": "echo 'Opdaterer index.html med alle templates...'",
+    "postbuild": "echo 'Færdig!'"
+  },
+  "keywords": [
+    "html",
+    "templates",
+    "e-boks"
+  ],
+  "author": "",
+  "license": "MIT"
+}
