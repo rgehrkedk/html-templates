@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Årsbrev 2024 - Tryg Forsikring</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0f4c81 0%, #1e5a8e 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .header .year {
+            font-size: 1.125rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        /* Intro Section */
+        .intro {
+            padding: 2rem;
+            background: #f1f5f9;
+            border-left: 4px solid #0f4c81;
+        }
+
+        .intro p {
+            font-size: 1rem;
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro strong {
+            color: #0f4c81;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #0f4c81;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        /* Accordion Styles */
+        details {
+            margin-bottom: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        details[open] {
+            border-color: #0f4c81;
+        }
+
+        summary {
+            padding: 1.25rem 1.5rem;
+            background: #f8fafc;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #1e293b;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #0f4c81;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary {
+            background: #eff6ff;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        summary:hover {
+            background: #eff6ff;
+        }
+
+        .accordion-content {
+            padding: 1.5rem;
+            background: white;
+        }
+
+        /* Insurance Card */
+        .insurance-card {
+            background: #f8fafc;
+            border-radius: 0.375rem;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .insurance-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .insurance-card h4 {
+            color: #0f4c81;
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .insurance-details {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .detail-value {
+            color: #1e293b;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f4c81;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        /* Tips List */
+        .tips-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips-list li {
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            background: #f8fafc;
+            border-left: 3px solid #10b981;
+            border-radius: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .tips-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .tips-list strong {
+            color: #0f4c81;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.25rem;
+            border-radius: 0.375rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box h4 {
+            color: #92400e;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .highlight-box p {
+            color: #78350f;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #f1f5f9;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer p {
+            color: #64748b;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer .contact {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #cbd5e1;
+        }
+
+        .footer .contact strong {
+            color: #0f4c81;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 640px) {
+            .header {
+                padding: 2rem 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .content, .intro, .footer {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.25rem;
+            }
+
+            summary {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .accordion-content {
+                padding: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-row {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .detail-value {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Dit Årsbrev fra Tryg Forsikring</h1>
+            <p class="year">2024</p>
+        </header>
+
+        <!-- Intro -->
+        <section class="intro">
+            <p><strong>Kære kunde,</strong></p>
+            <p>Tak fordi du vælger at være kunde hos os. 2024 har været et begivenhedsrigt år, og vi er glade for at kunne give dig et overblik over dine forsikringer og vigtige informationer for det kommende år.</p>
+            <p>Dette brev indeholder en oversigt over dine aktive forsikringer, din opsparingsstatus, samt nyttige tips til hvordan du bedst beskytter dig og dine værdier.</p>
+        </section>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Dine Forsikringer -->
+            <h2 class="section-title">Dine forsikringer</h2>
+
+            <details open>
+                <summary>Indboforsikring</summary>
+                <div class="accordion-content">
+                    <div class="insurance-card">
+                        <h4>Indboforsikring med familiedækning</h4>
+                        <div class="insurance-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Policenummer</span>
+                                <span class="detail-value">IB-2024-891234</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Forsikringssum</span>
+                                <span class="detail-value">850.000 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Selvrisiko</span>
+                                <span class="detail-value">2.500 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Årlig præmie</span>
+                                <span class="detail-value">3.240 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Rabat</span>
+                                <span class="detail-value">15% (tryghedspakke)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #64748b;">
+                        <strong>Hvad er dækket:</strong> Dine ejendele i hjemmet mod brand, indbrud, vandskade, el-skade og ansvar. Inkluderer også cykel ogværdigenstande.
+                    </p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Bilforsikring</summary>
+                <div class="accordion-content">
+                    <div class="insurance-card">
+                        <h4>Kasko Komplet - VW Golf, AA 12 345</h4>
+                        <div class="insurance-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Policenummer</span>
+                                <span class="detail-value">BF-2024-567890</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Dækning</span>
+                                <span class="detail-value">Kasko Komplet</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Selvrisiko (kasko)</span>
+                                <span class="detail-value">4.000 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Årlig præmie</span>
+                                <span class="detail-value">6.890 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Rabat</span>
+                                <span class="detail-value">20% (skadefri bonus)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #64748b;">
+                        <strong>Hvad er dækket:</strong> Fuld kaskoforsikning med ansvar, vejhjælp og lånebil. Du har 8 års skadefri bonus.
+                    </p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Husforsikring</summary>
+                <div class="accordion-content">
+                    <div class="insurance-card">
+                        <h4>Husforsikring - Rosenvej 42, 8000 Aarhus C</h4>
+                        <div class="insurance-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Policenummer</span>
+                                <span class="detail-value">HF-2024-234567</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Forsikringssum (bygning)</span>
+                                <span class="detail-value">3.250.000 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Selvrisiko</span>
+                                <span class="detail-value">5.000 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Årlig præmie</span>
+                                <span class="detail-value">8.650 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Rabat</span>
+                                <span class="detail-value">10% (alarm)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #64748b;">
+                        <strong>Hvad er dækket:</strong> Brand, storm, vandskade, indbrud og hærværk. Inkluderer også glas og el-skade.
+                    </p>
+                </div>
+            </details>
+
+            <!-- Året i tal -->
+            <h2 class="section-title" style="margin-top: 2.5rem;">Dit år i tal</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Skadesanmeldelser</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">18.780 kr.</div>
+                    <div class="stat-label">Samlet årlig præmie</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3.370 kr.</div>
+                    <div class="stat-label">Din besparelse i rabatter</div>
+                </div>
+            </div>
+            <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 2rem;">
+                Tillykke! Du har været skadefri hele 2024. Din skadefri bonus på bilforsikringen er øget til 8 år, hvilket giver dig en endnu bedre pris.
+            </p>
+
+            <!-- Vigtige ændringer -->
+            <h2 class="section-title">Vigtige informationer for 2025</h2>
+
+            <div class="highlight-box">
+                <h4>Prisjustering pr. 1. januar 2025</h4>
+                <p>På grund af stigende omkostninger i branchen, vil dine forsikringer blive reguleret med i gennemsnit 3,2%. Din nye samlede årspræmie bliver 19.380 kr. Du kan se de opdaterede priser i din selvbetjening.</p>
+            </div>
+
+            <details>
+                <summary>Nye fordele i 2025</summary>
+                <div class="accordion-content">
+                    <ul class="tips-list">
+                        <li>
+                            <strong>Gratis retshjælp</strong>
+                            Nu inkluderer din indboforsikring gratis retshjælp op til 50.000 kr. ved tvister.
+                        </li>
+                        <li>
+                            <strong>Cyberforsikring</strong>
+                            Få dækning ved identitetstyveri og hjælp til IT-sikkerhed - nu inkluderet uden ekstra betaling.
+                        </li>
+                        <li>
+                            <strong>Klimatilpasning</strong>
+                            Vi har udvidet dækningen for vandskader som følge af ekstremregn.
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>Sådan får du mest muligt ud af din forsikring</summary>
+                <div class="accordion-content">
+                    <ul class="tips-list">
+                        <li>
+                            <strong>Opdater din forsikringssum</strong>
+                            Husk at opdatere værdien af dit indbo, hvis du har købt nye værdigenstande.
+                        </li>
+                        <li>
+                            <strong>Installer tyverialarm</strong>
+                            Få op til 15% rabat på din husforsikring ved at installere godkendt alarm.
+                        </li>
+                        <li>
+                            <strong>Samle dine forsikringer</strong>
+                            Du sparer allerede med vores tryghedspakke. Overvej om andre familiemedlemmer kan drage nytte af samme fordel.
+                        </li>
+                        <li>
+                            <strong>Brug vores skadeforebyggelse</strong>
+                            Download vores app og få personlige tips til at undgå skader i hjemmet og på farten.
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+            <!-- Gode råd -->
+            <details>
+                <summary>Gode råd til vinteren 2025</summary>
+                <div class="accordion-content">
+                    <ul class="tips-list">
+                        <li>
+                            <strong>Tjek vandinstallationer</strong>
+                            Frost kan give store vandskader. Tjek radiatorer, vandhaner og isolering før frosten sætter ind.
+                        </li>
+                        <li>
+                            <strong>Ryd tagrender</strong>
+                            Blade og snavs kan blokere afløb og give vandskader. Ryd tagrender inden vinterens regn og sne.
+                        </li>
+                        <li>
+                            <strong>Skift til vinterdæk</strong>
+                            Husk at skifte til vinterdæk senest 1. november. Det er ikke kun lovpligtigt ved snefald - det reducerer også ulykkesrisikoen betydeligt.
+                        </li>
+                    </ul>
+                </div>
+            </details>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Har du spørgsmål til dit årsbrev eller dine forsikringer?</p>
+            <div class="contact">
+                <p><strong>Kundeservice:</strong> 70 11 20 20</p>
+                <p><strong>E-mail:</strong> kundeservice@tryg.dk</p>
+                <p><strong>Selvbetjening:</strong> www.tryg.dk/mit-tryg</p>
+            </div>
+            <p style="margin-top: 1.5rem; color: #94a3b8; font-size: 0.8rem;">
+                © 2025 Tryg Forsikring A/S | CVR-nr. 24260666
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
