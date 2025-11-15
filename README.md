@@ -1,46 +1,48 @@
-# HTML Email Templates
+# HTML Templates til e-Boks Beskeder
 
-A collection of secure, responsive HTML email templates for professional communication.
+En samling af sikre, responsive HTML/CSS skabeloner til e-Boks webview beskeder.
 
-## Overview
+## Oversigt
 
-This repository provides ready-to-use HTML email templates designed with security and compatibility in mind. Each template uses table-based layouts and inline CSS to ensure maximum compatibility across email clients.
+Dette repository indeholder produktionsklare HTML/CSS skabeloner designet til e-Boks digital post. Hver skabelon er bygget med sikkerhed og kompatibilitet i fokus, kun HTML og CSS (ingen JavaScript).
 
 ## GitHub Pages
 
-Visit the live site: [https://rgehrkedk.github.io/html-templates/](https://rgehrkedk.github.io/html-templates/)
+Se live site: [https://rgehrkedk.github.io/html-templates/](https://rgehrkedk.github.io/html-templates/)
 
-The site automatically deploys from the main branch whenever changes are pushed.
+Siden opdateres automatisk fra main branch ved hver push.
 
-## Available Templates
+## Tilgængelige Skabeloner
 
-- **Basic Notification** - Simple, clean template for system notifications and alerts
-- **Welcome Email** - Professional welcome message for new users or customers
-- **Security Alert** - Important security notification template with clear action items
-- **Newsletter** - Multi-section newsletter template for regular updates
+- **Årsbrev - Forsikring** ⭐ Professionelt årsbrev fra forsikringsselskab med CSS-only accordions (dansk)
+- **Grundlæggende Notifikation** - Simpel skabelon til systemnotifikationer og advarsler
+- **Velkomstbesked** - Professionel velkomstbesked til nye brugere eller kunder
+- **Sikkerhedsadvarsel** - Vigtig sikkerhedsnotifikation med tydelige handlingsemner
+- **Nyhedsbrev** - Multi-sektion nyhedsbrevsskabelon til regelmæssige opdateringer
 
 ## Features
 
-- Clean, validated HTML with no external dependencies
-- Responsive design that works across email clients
-- Inline CSS for maximum compatibility
-- Security-focused (no scripts, no external resources)
-- Table-based layouts for broad email client support
+- Ren, valideret HTML uden eksterne afhængigheder
+- Responsivt design der virker på alle enheder
+- Kun HTML og CSS (ingen JavaScript)
+- Sikkerhedsfokuseret (ingen scripts, ingen eksterne ressourcer)
+- CSS-only accordions brugt smart i forsikringsskabelonen
 
-## Usage
+## Anvendelse
 
-1. Browse templates at [https://rgehrkedk.github.io/html-templates/](https://rgehrkedk.github.io/html-templates/)
-2. View or download the template you need
-3. Customize with your content and branding
-4. Test across different email clients before sending
+1. Gennemse skabeloner på [https://rgehrkedk.github.io/html-templates/](https://rgehrkedk.github.io/html-templates/)
+2. Se eller download den skabelon du har brug for
+3. Tilpas med dit eget indhold og branding
+4. Test på forskellige enheder før publicering
 
-## File Structure
+## Filstruktur
 
 ```
 html-templates/
-├── index.html          # Main landing page
-├── styles.css          # Styles for the landing page
-├── templates/          # Email templates directory
+├── index.html          # Hovedside
+├── styles.css          # Styles til hovedsiden
+├── templates/          # Skabeloner
+│   ├── insurance-annual-letter.html  # Årsbrev forsikring (ny!)
 │   ├── basic-notification.html
 │   ├── welcome-email.html
 │   ├── security-alert.html
@@ -48,10 +50,18 @@ html-templates/
 └── README.md
 ```
 
+## Tekniske Detaljer
+
+### CSS-Only Accordions
+Forsikringsskabelonen bruger `<details>` og `<summary>` HTML elementer for at skabe interaktive accordions uden JavaScript. Dette sikrer maksimal kompatibilitet og hurtig loading.
+
+### Responsivt Design
+Alle skabeloner er mobile-first og bruger moderne CSS Grid og Flexbox for optimal visning på alle skærme.
+
 ## Development
 
-This repository is configured for GitHub Pages with automatic deployment. All changes pushed to the main branch will automatically update the live site.
+Repository er konfigureret til GitHub Pages med automatisk deployment. Alle ændringer pushet til main branch opdaterer automatisk live site.
 
-## License
+## Licens
 
-MIT License - Feel free to use these templates in your projects.
+MIT License - Brug frit skabelonerne i dine projekter.
