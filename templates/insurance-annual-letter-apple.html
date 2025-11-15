@@ -11,28 +11,17 @@
             box-sizing: border-box;
         }
 
-        @supports (font: -apple-system-body) {
-            body {
-                font: -apple-system-body;
-            }
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', sans-serif;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            background: linear-gradient(135deg, #e8f0fe 0%, #f8f9fa 50%, #fef5e7 100%);
-            background-attachment: fixed;
+            background: #f5f5f7;
             color: #1d1d1f;
             line-height: 1.4;
-            font-size: 15px;
-            font-weight: 400;
-            letter-spacing: -0.022em;
+            font-size: 14px;
         }
 
         .page-wrapper {
-            min-height: 100vh;
-            padding: 30px 16px;
+            padding: 24px 16px;
         }
 
         .container {
@@ -40,235 +29,140 @@
             margin: 0 auto;
         }
 
-        /* Hero Section - Liquid Glass Effect */
+        /* Hero */
         .hero {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 50px 32px;
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(40px) saturate(180%);
-            -webkit-backdrop-filter: blur(40px) saturate(180%);
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.85);
-            box-shadow:
-                0 6px 24px rgba(0, 0, 0, 0.08),
-                0 1px 0 rgba(255, 255, 255, 0.95) inset,
-                0 -1px 0 rgba(0, 0, 0, 0.02) inset;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
+            margin-bottom: 24px;
+            padding: 40px 24px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .hero h1 {
-            font-size: 56px;
+            font-size: 48px;
             font-weight: 700;
             letter-spacing: -0.03em;
-            margin-bottom: 10px;
-            line-height: 1;
-            background: linear-gradient(135deg, #1d1d1f 0%, #3a3a3c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 8px;
+            color: #1d1d1f;
         }
 
         .hero .name {
-            font-size: 21px;
-            font-weight: 500;
+            font-size: 17px;
+            font-weight: 400;
             color: #424245;
-            letter-spacing: -0.02em;
         }
 
-        /* Stats Section - Floating Cards */
+        /* Stats */
         .stats-section {
-            margin-bottom: 40px;
+            margin-bottom: 24px;
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(30px) saturate(150%);
-            -webkit-backdrop-filter: blur(30px) saturate(150%);
-            padding: 32px 24px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            box-shadow:
-                0 8px 28px rgba(0, 0, 0, 0.06),
-                0 1px 0 rgba(255, 255, 255, 0.85) inset;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow:
-                0 16px 48px rgba(0, 0, 0, 0.12),
-                0 1px 0 rgba(255, 255, 255, 0.95) inset;
-            border-color: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 24px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            text-align: center;
         }
 
         .stat-number {
-            font-size: 52px;
+            font-size: 40px;
             font-weight: 700;
-            letter-spacing: -0.04em;
-            line-height: 1;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #1d1d1f 0%, #424245 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            letter-spacing: -0.02em;
+            color: #1d1d1f;
+            margin-bottom: 4px;
         }
 
         .stat-label {
-            font-size: 15px;
+            font-size: 13px;
             color: #424245;
             font-weight: 500;
-            letter-spacing: -0.02em;
         }
 
         /* Section Header */
         .section-header {
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 20px;
         }
 
         .section-header .eyebrow {
-            font-size: 14px;
+            font-size: 11px;
             font-weight: 600;
             color: #424245;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .section-header h2 {
-            font-size: 40px;
+            font-size: 28px;
             font-weight: 700;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
             color: #1d1d1f;
-            line-height: 1.1;
         }
 
-        /* Coverage Cards - Liquid Glass */
+        /* Coverage */
         .coverage-section {
-            margin-bottom: 40px;
+            margin-bottom: 24px;
         }
 
         .coverage-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
         }
 
         .coverage-card {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(25px) saturate(140%);
-            -webkit-backdrop-filter: blur(25px) saturate(140%);
-            border-radius: 22px;
-            padding: 32px 28px;
-            border: 1px solid rgba(255, 255, 255, 0.75);
-            box-shadow:
-                0 12px 36px rgba(0, 0, 0, 0.08),
-                0 1px 0 rgba(255, 255, 255, 0.9) inset,
-                0 0 0 0.5px rgba(0, 0, 0, 0.04);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .coverage-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: radial-gradient(ellipse at top, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .coverage-card:hover {
-            transform: translateY(-8px);
-            box-shadow:
-                0 24px 64px rgba(0, 0, 0, 0.14),
-                0 1px 0 rgba(255, 255, 255, 1) inset,
-                0 0 0 0.5px rgba(0, 0, 0, 0.06);
-            border-color: rgba(255, 255, 255, 0.95);
             background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 24px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .coverage-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.02) 100%);
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .coverage-icon::after {
-            content: '';
-            position: absolute;
-            inset: 7px;
-            border-radius: 7px;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.45) 100%);
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: #1d1d1f;
+            margin-bottom: 16px;
         }
 
         .coverage-card h3 {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 6px;
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 4px;
             color: #1d1d1f;
         }
 
         .coverage-policy {
-            font-size: 13px;
+            font-size: 12px;
             color: #424245;
-            margin-bottom: 24px;
-            letter-spacing: -0.01em;
+            margin-bottom: 16px;
         }
 
         .coverage-details {
-            margin-bottom: 24px;
+            margin-bottom: 16px;
         }
 
         .coverage-detail {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
-            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            font-size: 13px;
         }
 
         .coverage-detail:last-child {
@@ -277,56 +171,49 @@
 
         .coverage-detail-label {
             color: #424245;
-            font-weight: 400;
         }
 
         .coverage-detail-value {
             color: #1d1d1f;
             font-weight: 600;
-            text-align: right;
         }
 
         .coverage-price {
-            padding-top: 20px;
-            border-top: 0.5px solid rgba(0, 0, 0, 0.12);
+            padding-top: 16px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .coverage-price-amount {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
-            letter-spacing: -0.03em;
             color: #1d1d1f;
-            line-height: 1;
         }
 
         .coverage-price-label {
-            font-size: 13px;
+            font-size: 12px;
             color: #424245;
-            margin-top: 5px;
+            margin-top: 2px;
         }
 
-        /* Benefits Section */
+        /* Benefits */
         .benefits-section {
-            margin-bottom: 40px;
+            margin-bottom: 24px;
         }
 
         .benefits-container {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(35px) saturate(160%);
-            -webkit-backdrop-filter: blur(35px) saturate(160%);
-            border-radius: 24px;
-            padding: 44px 36px;
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            box-shadow:
-                0 14px 48px rgba(0, 0, 0, 0.1),
-                0 1px 0 rgba(255, 255, 255, 0.9) inset;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 32px 24px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 32px;
-            margin-top: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
         }
 
         .benefit {
@@ -334,121 +221,92 @@
         }
 
         .benefit-icon {
-            width: 60px;
-            height: 60px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            background: rgba(0, 0, 0, 0.05);
-            margin: 0 auto 18px;
-            position: relative;
-        }
-
-        .benefit-icon::after {
-            content: '';
-            position: absolute;
-            inset: 10px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.45) 100%);
+            background: #1d1d1f;
+            margin: 0 auto 12px;
         }
 
         .benefit h3 {
-            font-size: 19px;
+            font-size: 17px;
             font-weight: 600;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             color: #1d1d1f;
-            letter-spacing: -0.02em;
         }
 
         .benefit p {
-            font-size: 15px;
+            font-size: 13px;
             color: #424245;
-            line-height: 1.4;
-            letter-spacing: -0.02em;
         }
 
         /* Footer */
         .footer {
             text-align: center;
-            padding: 44px 32px;
-            background: rgba(255, 255, 255, 0.55);
-            backdrop-filter: blur(30px) saturate(150%);
-            -webkit-backdrop-filter: blur(30px) saturate(150%);
-            border-radius: 22px;
-            border: 1px solid rgba(255, 255, 255, 0.65);
-            box-shadow:
-                0 10px 32px rgba(0, 0, 0, 0.07),
-                0 1px 0 rgba(255, 255, 255, 0.85) inset;
+            padding: 32px 24px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .footer h3 {
-            font-size: 24px;
+            font-size: 21px;
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             color: #1d1d1f;
-            letter-spacing: -0.02em;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 14px;
-            max-width: 650px;
-            margin: 0 auto 28px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            max-width: 600px;
+            margin: 0 auto 20px;
         }
 
         .contact-item {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 20px 16px;
-            border-radius: 14px;
-            border: 0.5px solid rgba(255, 255, 255, 0.75);
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+            background: rgba(0, 0, 0, 0.02);
+            padding: 16px;
+            border-radius: 8px;
         }
 
         .contact-label {
-            font-size: 12px;
+            font-size: 11px;
             color: #424245;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             font-weight: 600;
-            letter-spacing: 0.06em;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .contact-value {
-            font-size: 15px;
+            font-size: 14px;
             color: #1d1d1f;
             font-weight: 500;
         }
 
         .footer-legal {
-            font-size: 12px;
+            font-size: 11px;
             color: #424245;
-            margin-top: 24px;
-            padding-top: 20px;
-            border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero {
-                padding: 40px 24px;
-                margin-bottom: 32px;
-            }
-
             .hero h1 {
-                font-size: 40px;
-            }
-
-            .hero .name {
-                font-size: 18px;
-            }
-
-            .section-header h2 {
-                font-size: 32px;
+                font-size: 36px;
             }
 
             .stat-number {
-                font-size: 44px;
+                font-size: 32px;
+            }
+
+            .section-header h2 {
+                font-size: 24px;
             }
 
             .coverage-grid,
@@ -456,28 +314,14 @@
                 grid-template-columns: 1fr;
             }
 
-            .benefits-container {
-                padding: 32px 24px;
-            }
-
-            .benefits-grid {
-                gap: 28px;
-            }
-
             .page-wrapper {
-                padding: 24px 12px;
-            }
-
-            .stats-section,
-            .coverage-section,
-            .benefits-section {
-                margin-bottom: 32px;
+                padding: 16px 12px;
             }
         }
 
         @media (prefers-color-scheme: dark) {
             body {
-                background: linear-gradient(135deg, #1a1a1c 0%, #2d2d30 50%, #1a1a1c 100%);
+                background: #1a1a1c;
                 color: #f5f5f7;
             }
 
@@ -486,20 +330,23 @@
             .coverage-card,
             .benefits-container,
             .footer {
-                background: rgba(29, 29, 31, 0.75);
-                border-color: rgba(255, 255, 255, 0.18);
+                background: rgba(29, 29, 31, 0.8);
+                border-color: rgba(255, 255, 255, 0.1);
             }
 
             .hero h1,
             .section-header h2,
             .coverage-card h3,
-            .stat-number {
-                background: linear-gradient(135deg, #f5f5f7 0%, #d1d1d6 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
+            .stat-number,
+            .benefit h3,
+            .footer h3,
+            .coverage-detail-value,
+            .coverage-price-amount,
+            .contact-value {
+                color: #f5f5f7;
             }
 
+            .hero .name,
             .stat-label,
             .section-header .eyebrow,
             .coverage-policy,
@@ -511,17 +358,13 @@
                 color: #d1d1d6;
             }
 
-            .hero .name,
-            .coverage-detail-value,
-            .benefit h3,
-            .footer h3,
-            .contact-value {
-                color: #f5f5f7;
+            .coverage-icon,
+            .benefit-icon {
+                background: #f5f5f7;
             }
 
             .contact-item {
-                background: rgba(50, 50, 52, 0.7);
-                border-color: rgba(255, 255, 255, 0.12);
+                background: rgba(255, 255, 255, 0.05);
             }
         }
     </style>
@@ -529,15 +372,13 @@
 <body>
     <div class="page-wrapper">
         <div class="container">
-            <!-- Hero Section -->
+            <!-- Hero -->
             <section class="hero">
-                <div class="hero-content">
-                    <h1>2024</h1>
-                    <p class="name">Henrik Jensen</p>
-                </div>
+                <h1>2024</h1>
+                <p class="name">Henrik Jensen</p>
             </section>
 
-            <!-- Stats Section -->
+            <!-- Stats -->
             <section class="stats-section">
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -559,15 +400,14 @@
                 </div>
             </section>
 
-            <!-- Coverage Section -->
+            <!-- Coverage -->
             <section class="coverage-section">
                 <div class="section-header">
                     <div class="eyebrow">Dine forsikringer</div>
-                    <h2>Fire dækninger.<br>Fuld tryghed.</h2>
+                    <h2>Fire dækninger. Fuld tryghed.</h2>
                 </div>
 
                 <div class="coverage-grid">
-                    <!-- Home Insurance -->
                     <div class="coverage-card">
                         <div class="coverage-icon"></div>
                         <h3>Indbo</h3>
@@ -594,7 +434,6 @@
                         </div>
                     </div>
 
-                    <!-- Car Insurance -->
                     <div class="coverage-card">
                         <div class="coverage-icon"></div>
                         <h3>Bil</h3>
@@ -621,7 +460,6 @@
                         </div>
                     </div>
 
-                    <!-- Accident Insurance -->
                     <div class="coverage-card">
                         <div class="coverage-icon"></div>
                         <h3>Ulykke</h3>
@@ -648,7 +486,6 @@
                         </div>
                     </div>
 
-                    <!-- Travel Insurance -->
                     <div class="coverage-card">
                         <div class="coverage-icon"></div>
                         <h3>Rejse</h3>
@@ -677,12 +514,12 @@
                 </div>
             </section>
 
-            <!-- Benefits Section -->
+            <!-- Benefits -->
             <section class="benefits-section">
                 <div class="benefits-container">
                     <div class="section-header">
                         <div class="eyebrow">Nyt i 2025</div>
-                        <h2>Mere værdi.<br>Ingen ekstra omkostning.</h2>
+                        <h2>Mere værdi. Ingen ekstra omkostning.</h2>
                     </div>
 
                     <div class="benefits-grid">
