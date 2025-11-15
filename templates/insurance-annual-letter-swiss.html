@@ -16,16 +16,21 @@
             font-size: 16px;
             line-height: 1.5;
             color: #000000;
-            background-color: #ffffff;
-            padding: 0;
+            background-color: #e8e8e8;
+            padding: 3rem 1.5rem;
             margin: 0;
             font-weight: 400;
+            min-height: 100vh;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 80px 80px 120px 80px;
+            background: #ffffff;
+            box-shadow:
+                0 1px 3px rgba(0, 0, 0, 0.08),
+                0 8px 32px rgba(0, 0, 0, 0.12);
         }
 
         /* Header - Swiss Typography Style */
@@ -363,8 +368,13 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
             .container {
                 padding: 40px 24px 60px 24px;
+                box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
             }
 
             .header {
@@ -423,7 +433,7 @@
              Tilpas: Firmanavn, år
              ============================================ -->
         <header class="header">
-            <div class="header-meta">Tryg Forsikring A/S</div>
+            <div class="header-meta">Forsikring Nord A/S</div>
             <h1>Årsbrev</h1>
             <div class="year">2024</div>
         </header>
@@ -709,22 +719,22 @@
 
                 <div class="col-4">
                     <div class="footer-title">Kundeservice</div>
-                    <div class="footer-content">70 11 20 20</div>
+                    <div class="footer-content">70 11 22 33</div>
                 </div>
 
                 <div class="col-4">
                     <div class="footer-title">E-mail</div>
-                    <div class="footer-content">kundeservice@tryg.dk</div>
+                    <div class="footer-content">kontakt@forsikringnord.dk</div>
                 </div>
 
                 <div class="col-4">
                     <div class="footer-title">Selvbetjening</div>
-                    <div class="footer-content">www.tryg.dk/mit-tryg</div>
+                    <div class="footer-content">www.forsikringnord.dk/min-side</div>
                 </div>
             </div>
 
             <div class="footer-meta">
-                © 2025 Tryg Forsikring A/S | CVR-nr. 24260666
+                © 2025 Forsikring Nord A/S | CVR-nr. 12345678
             </div>
         </footer>
     </div>
