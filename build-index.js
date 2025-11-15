@@ -14,37 +14,37 @@ const path = require('path');
 const TEMPLATES_DIR = path.join(__dirname, 'templates');
 const INDEX_FILE = path.join(__dirname, 'index.html');
 
-// Template metadata - kan udvides med metadata fra HTML-filerne
+// Template metadata med branche og stil tags
 const templateMetadata = {
     'insurance-annual-letter.html': {
-        title: 'Årsbrev - Forsikring',
-        description: 'Professionelt årsbrev fra forsikringsselskab med smart brug af CSS accordions',
-        featured: true
+        title: 'Årsbrev - Forsikring (Classic)',
+        description: 'Klassisk forsikringsbrev med professionelt layout og CSS accordions',
+        industry: 'forsikring',
+        style: 'classic'
+    },
+    'insurance-annual-letter-editorial.html': {
+        title: 'Årsbrev - Forsikring (Editorial)',
+        description: 'Professionelt årsbrev med editorial design, serif typografi og illustrative elementer',
+        industry: 'forsikring',
+        style: 'editorial'
     },
     'insurance-annual-letter-swiss.html': {
-        title: 'Årsbrev - Forsikring (Swiss Style)',
-        description: 'Swiss/International Typographic Style variant med Helvetica, grid-baseret layout og ekstrem renhed',
-        featured: true
+        title: 'Årsbrev - Forsikring (Swiss)',
+        description: 'Swiss/International Typographic Style med Helvetica, grid-baseret layout og ekstrem renhed',
+        industry: 'forsikring',
+        style: 'swiss'
     },
-    'basic-notification.html': {
-        title: 'Grundlæggende Notifikation',
-        description: 'Simpel, ren skabelon til systemnotifikationer og advarsler',
-        featured: false
+    'insurance-annual-letter-utility.html': {
+        title: 'Årsbrev - Forsikring (Utility)',
+        description: 'Utility-first design med funktionel æstetik, klar hierarki og maksimal læsbarhed',
+        industry: 'forsikring',
+        style: 'utility'
     },
-    'welcome-email.html': {
-        title: 'Velkomstbesked',
-        description: 'Professionel velkomstbesked til nye brugere eller kunder',
-        featured: false
-    },
-    'security-alert.html': {
-        title: 'Sikkerhedsadvarsel',
-        description: 'Vigtig sikkerhedsnotifikation med tydelige handlingsemner',
-        featured: false
-    },
-    'newsletter.html': {
-        title: 'Nyhedsbrev',
-        description: 'Multi-sektion nyhedsbrevsskabelon til regelmæssige opdateringer',
-        featured: false
+    'pension-fripolice-notice.html': {
+        title: 'Fripolice Notifikation - Pension',
+        description: 'Pensionsinformation med soft illustrated edges, decorative marginer og farvede accordions',
+        industry: 'pension',
+        style: 'soft-illustrated'
     }
 };
 
@@ -65,21 +65,51 @@ function extractTitleFromHTML(filePath) {
 }
 
 /**
- * Generer et template card HTML
+ * Generer tag navn baseret på stil
+ */
+function getStyleTagName(style) {
+    const styleNames = {
+        'editorial': 'Editorial',
+        'swiss': 'Swiss',
+        'utility': 'Utility',
+        'soft-illustrated': 'Soft Illustrated',
+        'classic': 'Classic'
+    };
+    return styleNames[style] || style;
+}
+
+/**
+ * Generer tag navn baseret på branche
+ */
+function getIndustryTagName(industry) {
+    const industryNames = {
+        'forsikring': 'Forsikring',
+        'pension': 'Pension'
+    };
+    return industryNames[industry] || industry;
+}
+
+/**
+ * Generer et template card HTML med den nye struktur
  */
 function generateTemplateCard(filename, metadata) {
-    const isFeatured = metadata.featured ? ' featured' : '';
     const title = metadata.title || extractTitleFromHTML(path.join(TEMPLATES_DIR, filename)) || filename.replace('.html', '');
     const description = metadata.description || 'HTML template';
+    const industry = metadata.industry || 'general';
+    const style = metadata.style || 'classic';
 
-    return `                <div class="template-card${isFeatured}">
+    return `                <article class="template-card" data-industry="${industry}" data-style="${style}">
                     <h3>${title}</h3>
                     <p>${description}</p>
+                    <div class="template-tags">
+                        <span class="tag industry">${getIndustryTagName(industry)}</span>
+                        <span class="tag style">${getStyleTagName(style)}</span>
+                    </div>
                     <div class="template-links">
                         <a href="templates/${filename}" class="btn btn-primary">Se Skabelon</a>
                         <a href="templates/${filename}" download class="btn btn-secondary">Download</a>
                     </div>
-                </div>`;
+                </article>`;
 }
 
 /**
@@ -91,9 +121,13 @@ function generateTemplateCards() {
         .sort();
 
     const cards = files.map(file => {
-        const metadata = templateMetadata[file] || { featured: false };
+        const metadata = templateMetadata[file];
+        if (!metadata) {
+            console.warn(`⚠ Ingen metadata for ${file} - springer over`);
+            return null;
+        }
         return generateTemplateCard(file, metadata);
-    });
+    }).filter(Boolean);
 
     return cards.join('\n\n');
 }
@@ -105,39 +139,36 @@ function updateIndexHTML() {
     const indexContent = fs.readFileSync(INDEX_FILE, 'utf-8');
     const templateCards = generateTemplateCards();
 
-    // Find start og slut markers for template grid
-    const gridStart = indexContent.indexOf('<div class="template-grid">');
-    const gridEnd = indexContent.indexOf('</div>', gridStart + 100); // Find næste </div> efter grid start
+    // Find start og slut markers for template grid med ny struktur
+    const gridStartPattern = /<div class="template-grid"[^>]*>/;
+    const gridMatch = indexContent.match(gridStartPattern);
 
-    if (gridStart === -1 || gridEnd === -1) {
+    if (!gridMatch) {
         console.error('Kunne ikke finde template-grid i index.html');
         process.exit(1);
     }
 
-    // Søg efter afsluttende </div> for template-grid sektionen
-    let sectionEnd = gridEnd;
-    let nestingLevel = 1;
-    let currentPos = gridStart + '<div class="template-grid">'.length;
+    const gridStart = indexContent.indexOf(gridMatch[0]);
 
-    while (nestingLevel > 0 && currentPos < indexContent.length) {
-        const nextOpenDiv = indexContent.indexOf('<div', currentPos);
-        const nextCloseDiv = indexContent.indexOf('</div>', currentPos);
+    // Find afsluttende </div> for template-grid ved at finde empty-state div
+    const emptyStateStart = indexContent.indexOf('<div class="empty-state"', gridStart);
 
-        if (nextCloseDiv === -1) break;
+    if (emptyStateStart === -1) {
+        console.error('Kunne ikke finde empty-state div');
+        process.exit(1);
+    }
 
-        if (nextOpenDiv !== -1 && nextOpenDiv < nextCloseDiv) {
-            nestingLevel++;
-            currentPos = nextOpenDiv + 4;
-        } else {
-            nestingLevel--;
-            sectionEnd = nextCloseDiv;
-            currentPos = nextCloseDiv + 6;
-        }
+    // Gå tilbage til det foregående </div> før empty-state
+    let sectionEnd = indexContent.lastIndexOf('</div>', emptyStateStart);
+
+    if (sectionEnd === -1 || sectionEnd <= gridStart) {
+        console.error('Kunne ikke finde afsluttende div for template-grid');
+        process.exit(1);
     }
 
     // Byg ny content
     const newContent =
-        indexContent.substring(0, gridStart + '<div class="template-grid">'.length) +
+        indexContent.substring(0, gridStart + gridMatch[0].length) +
         '\n' +
         templateCards +
         '\n            ' +
@@ -146,7 +177,10 @@ function updateIndexHTML() {
     // Skriv opdateret fil
     fs.writeFileSync(INDEX_FILE, newContent, 'utf-8');
     console.log('✓ index.html opdateret med alle templates');
-    console.log(`✓ Fundet ${Object.keys(templateMetadata).length} templates`);
+
+    const templateCount = fs.readdirSync(TEMPLATES_DIR)
+        .filter(file => file.endsWith('.html')).length;
+    console.log(`✓ Fundet ${templateCount} templates`);
 }
 
 // Kør script
