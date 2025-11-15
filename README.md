@@ -60,7 +60,20 @@ Alle skabeloner er mobile-first og bruger moderne CSS Grid og Flexbox for optima
 
 ## Development
 
-Repository er konfigureret til GitHub Pages med automatisk deployment. Alle ændringer pushet til main branch opdaterer automatisk live site.
+### Automatisk Deployment
+Repository bruger GitHub Actions til automatisk workflow:
+
+- **Claude branches** (`claude/*`) merges automatisk til `main` ved push
+- **GitHub Pages** deployer automatisk fra `main` branch
+- Ingen manuel intervention nødvendig
+
+Workflow: `.github/workflows/auto-merge-to-main.yml`
+
+### Lokal Development
+1. Klon repository
+2. Åbn `index.html` i browser
+3. Rediger skabeloner i `templates/` mappen
+4. Push til `claude/*` branch - resten sker automatisk
 
 ## Licens
 
