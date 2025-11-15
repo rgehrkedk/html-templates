@@ -256,11 +256,11 @@
         }
 
         summary {
-            padding: 1.5rem 2rem;
+            padding: 1.25rem 1.75rem;
             background: #f8f9fa;
             cursor: pointer;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #212529;
             list-style: none;
             display: flex;
@@ -274,19 +274,25 @@
             display: none;
         }
 
+        summary .summary-text {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
         summary::before {
             content: '?';
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             background: linear-gradient(135deg, #74b9ff 0%, #4dabf7 100%);
             color: white;
             border-radius: 50%;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            margin-right: 1rem;
+            margin-right: 0.875rem;
             flex-shrink: 0;
         }
 
@@ -298,6 +304,7 @@
             transition: transform 0.3s ease;
             min-width: 24px;
             text-align: center;
+            flex-shrink: 0;
         }
 
         details[open] summary {
@@ -314,7 +321,7 @@
         }
 
         .accordion-content {
-            padding: 2rem;
+            padding: 1.75rem;
             background: #ffffff;
             line-height: 1.8;
             color: #495057;
@@ -330,6 +337,48 @@
 
         .accordion-content strong {
             color: #212529;
+        }
+
+        /* Example Accordion - Special Styling */
+        details.example-accordion {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+            border: 1px solid #c8e6c9;
+        }
+
+        details.example-accordion:hover {
+            border-color: #a5d6a7;
+            box-shadow: 0 2px 12px rgba(76, 175, 80, 0.12);
+        }
+
+        details.example-accordion[open] {
+            border-color: #66bb6a;
+            box-shadow: 0 4px 16px rgba(76, 175, 80, 0.15);
+        }
+
+        details.example-accordion summary {
+            background: linear-gradient(135deg, #c8e6c9 0%, #e8f5e9 100%);
+        }
+
+        details.example-accordion summary::before {
+            content: '✓';
+            background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%);
+        }
+
+        details.example-accordion summary::after {
+            color: #4caf50;
+        }
+
+        details.example-accordion[open] summary {
+            background: linear-gradient(to right, #e8f5e9 0%, #ffffff 100%);
+            border-bottom: 1px solid #c8e6c9;
+        }
+
+        details.example-accordion summary:hover {
+            background: #e8f5e9;
+        }
+
+        details.example-accordion .accordion-content {
+            background: #fafffe;
         }
 
         /* Comparison Box */
@@ -532,16 +581,16 @@
             <section class="intro">
                 <span class="margin-note">Kort fortalt</span>
                 <p>Kære <strong>Henrik Jensen</strong>,</p>
-                <p>Vi skriver til dig, fordi vi kan se, at der i en periode ikke er blevet indbetalt til din pensionsordning hos os. Denne besked handler om, hvad det betyder for din fremtidige dækning.</p>
+                <p>Der er ikke indbetalt til din pensionsordning i en periode. Denne besked forklarer, hvad det betyder.</p>
             </section>
 
             <!-- ============================================
                  HOVEDBUDSKAB
                  ============================================ -->
             <div class="notice-box">
-                <h3>Automatisk overgang til præmiefri ordning</h3>
-                <p><strong>Hvis der fortsat ikke indbetales til din pensionsordning senest den 1. februar 2027</strong>, overgår din ordning automatisk til en præmiefri ordning (også kaldet fripolice).</p>
-                <p>Dette er en lovpligtig ordning, der sikrer, at de penge, du allerede har indbetalt, forbliver investeret til din pension.</p>
+                <h3>Automatisk overgang til fripolice</h3>
+                <p><strong>Hvis der fortsat ikke indbetales senest 1. februar 2027</strong>, overgår din ordning automatisk til fripolice.</p>
+                <p>Dine indbetalte penge forbliver investeret, men forsikringsdækninger bortfalder.</p>
                 <span class="notice-date">Frist: 1. februar 2027</span>
             </div>
 
@@ -555,25 +604,21 @@
                 <div class="comparison-column inactive">
                     <h4>Dette bortfalder:</h4>
                     <ul class="decorative-list style-2">
-                        <li><strong>Forsikring ved tab af erhvervsevne</strong> – Dækning hvis du bliver ude af stand til at arbejde</li>
-                        <li><strong>Forsikring ved kritisk sygdom</strong> – Engangsbeløb ved alvorlig sygdom</li>
-                        <li><strong>Forsikring ved død</strong> – Udbetaling til dine efterladte</li>
+                        <li><strong>Forsikring ved tab af erhvervsevne</strong></li>
+                        <li><strong>Forsikring ved kritisk sygdom</strong></li>
+                        <li><strong>Forsikring ved død</strong></li>
                     </ul>
                 </div>
 
                 <div class="comparison-column active">
                     <h4>Dette bevares:</h4>
                     <ul class="decorative-list style-3">
-                        <li><strong>Din opsparede pension</strong> – Alle tidligere indbetalinger forbliver investeret</li>
-                        <li><strong>Afkast på opsparingen</strong> – Dine midler fortsætter med at blive forrentet</li>
-                        <li><strong>Udbetaling ved pension</strong> – Du modtager pension som planlagt, når du går på pension</li>
+                        <li><strong>Din opsparede pension</strong></li>
+                        <li><strong>Afkast på opsparingen</strong></li>
+                        <li><strong>Udbetaling ved pension</strong></li>
                     </ul>
                 </div>
             </div>
-
-            <p style="color: #495057; line-height: 1.8; margin-bottom: 2rem;">
-                Med andre ord: De penge, du allerede har sparet op, mister du ikke. Men de forsikringer, der beskytter dig og din familie, hvis noget uventet sker, vil ikke længere være aktive.
-            </p>
 
             <!-- ============================================
                  OFTE STILLEDE SPØRGSMÅL
@@ -582,53 +627,30 @@
             <span class="margin-note">Spørgsmål</span>
 
             <details>
-                <summary>Hvad er en fripolice?</summary>
+                <summary><span class="summary-text">Hvad er en fripolice?</span></summary>
                 <div class="accordion-content">
-                    <p>En fripolice (præmiefri ordning) er en pensionsordning, hvor du ikke længere indbetaler, men hvor dine allerede opsparede midler fortsætter med at være investeret.</p>
-                    <p><strong>Kort sagt:</strong> Dine penge bliver stående og vokser, men du får ikke nye forsikringer eller dækninger.</p>
+                    <p>En pensionsordning uden nye indbetalinger. Dine opsparede penge forbliver investeret og vokser, men forsikringer bortfalder.</p>
                 </div>
             </details>
 
             <details>
-                <summary>Mister jeg mine opsparede penge?</summary>
+                <summary><span class="summary-text">Mister jeg mine opsparede penge?</span></summary>
                 <div class="accordion-content">
-                    <p><strong>Nej, absolut ikke.</strong> Alle de penge, du har indbetalt til din pension gennem årene, forbliver i din ordning. De bliver fortsat investeret, og du vil modtage dem som pension, når du går på pension.</p>
-                    <p>Det eneste, der ændrer sig, er at de forsikringsdækninger, der kræver løbende indbetalinger, vil bortfalde.</p>
+                    <p><strong>Nej.</strong> Alle dine indbetalinger forbliver investeret og udbetales ved pension.</p>
                 </div>
             </details>
 
             <details>
-                <summary>Kan jeg stadig få udbetalt min pension senere?</summary>
+                <summary><span class="summary-text">Hvad hvis jeg bliver syg eller dør?</span></summary>
                 <div class="accordion-content">
-                    <p><strong>Ja.</strong> Din opsparing forbliver intakt, og du vil stadig modtage pension, når du når pensionsalderen. Det eneste, der ændrer sig, er størrelsen – da der ikke kommer nye indbetalinger, vil din fremtidige pension være baseret på det, du allerede har sparet op.</p>
+                    <p>Forsikringer ved kritisk sygdom, tab af erhvervsevne og død er ikke aktive ved fripolice. Din pensionsopsparing bevares.</p>
                 </div>
             </details>
 
             <details>
-                <summary>Hvad sker der, hvis jeg bliver syg eller dør?</summary>
+                <summary><span class="summary-text">Kan jeg genoptage indbetalingerne?</span></summary>
                 <div class="accordion-content">
-                    <p>Hvis din ordning overgår til fripolice, vil forsikringerne ved kritisk sygdom, tab af erhvervsevne og død <strong>ikke længere være aktive</strong>.</p>
-                    <p>Det betyder, at hvis du bliver alvorligt syg, kommer ud for en ulykke, der gør dig uarbejdsdygtig, eller dør, vil der ikke blive udbetalt fra disse forsikringer. Din pensionsopsparing vil dog stadig være der.</p>
-                </div>
-            </details>
-
-            <details>
-                <summary>Kan jeg genoptage indbetalingerne senere?</summary>
-                <div class="accordion-content">
-                    <p><strong>Ja, i de fleste tilfælde.</strong> Hvis du ønsker at genoptage indbetalingerne og få forsikringerne aktive igen, er det ofte muligt – men det kræver som regel en ny helbredsvurdering.</p>
-                    <p>Kontakt os, så hjælper vi dig med at se på mulighederne.</p>
-                </div>
-            </details>
-
-            <details>
-                <summary>Hvad skal jeg gøre nu?</summary>
-                <div class="accordion-content">
-                    <p>Du har tre muligheder:</p>
-                    <ul class="decorative-list">
-                        <li><strong>Genoptag indbetalingerne</strong> – Så fortsætter alle dine forsikringer som normalt</li>
-                        <li><strong>Lad ordningen overgå til fripolice</strong> – Hvis du ikke ønsker at fortsætte med at indbetale</li>
-                        <li><strong>Kontakt os for rådgivning</strong> – Vi hjælper dig gerne med at finde den bedste løsning for dig</li>
-                    </ul>
+                    <p><strong>Ja,</strong> ofte muligt efter ny helbredsvurdering. Kontakt os for rådgivning.</p>
                 </div>
             </details>
 
@@ -639,41 +661,34 @@
             <span class="margin-note">Handlemuligheder</span>
 
             <div class="action-box">
-                <h3>Vil du fortsætte med at indbetale?</h3>
-                <p>Hvis du ønsker at fortsætte din pensionsopsparing og bevare alle dine forsikringer, skal du genoptage indbetalingerne senest <strong>1. februar 2027</strong>.</p>
-                <p><strong>Sådan gør du:</strong></p>
+                <h3>Genoptag indbetalinger?</h3>
+                <p>For at bevare forsikringer, genoptag senest <strong>1. februar 2027</strong>:</p>
                 <ul class="decorative-list">
-                    <li>Log ind på <strong>forsikringnord.dk/min-side</strong> og genaktiver indbetalingerne</li>
-                    <li>Kontakt os på telefon <strong>70 11 22 33</strong></li>
-                    <li>Skriv til os på <strong>pension@forsikringnord.dk</strong></li>
+                    <li>Log ind på <strong>forsikringnord.dk/min-side</strong></li>
+                    <li>Ring <strong>70 11 22 33</strong></li>
+                    <li>Skriv til <strong>pension@forsikringnord.dk</strong></li>
                 </ul>
-            </div>
-
-            <div class="info-box">
-                <p><strong>Har du brug for rådgivning?</strong></p>
-                <p>Vores pensionsrådgivere står klar til at hjælpe dig med at finde den bedste løsning for din situation. Ring eller skriv til os, så taler vi om dine muligheder.</p>
             </div>
 
             <!-- ============================================
                  EKSEMPEL
                  ============================================ -->
-            <h2 class="section-title">Et konkret eksempel</h2>
+            <h2 class="section-title">Eksempel</h2>
             <span class="margin-note">Eksempel</span>
 
-            <p style="color: #495057; line-height: 1.8; margin-bottom: 1.5rem;">
-                <strong>Maria, 45 år</strong>, har indbetalt til sin pension i 15 år og har opsparet 850.000 kr. Hun mister sit job og stopper indbetalingerne.
-            </p>
-
-            <ul class="decorative-list">
-                <li><strong>Efter 1. februar 2027</strong> overgår hendes ordning til fripolice</li>
-                <li><strong>Hendes 850.000 kr. forbliver investeret</strong> og fortsætter med at vokse</li>
-                <li><strong>Når hun går på pension</strong>, får hun udbetalt de opsparede midler</li>
-                <li><strong>Men:</strong> Hvis hun i mellemtiden bliver syg eller dør, er forsikringerne ikke længere aktive</li>
-            </ul>
-
-            <p style="color: #495057; line-height: 1.8; margin-top: 1.5rem;">
-                Hvis Maria får et nyt job og ønsker at genoptage indbetalingerne, kan hun kontakte os for at få forsikringerne aktive igen.
-            </p>
+            <details class="example-accordion">
+                <summary><span class="summary-text">Se konkret eksempel: Maria, 45 år</span></summary>
+                <div class="accordion-content">
+                    <p><strong>Maria har opsparet 850.000 kr.</strong> Hun stopper indbetalinger efter jobskifte.</p>
+                    <ul class="decorative-list">
+                        <li>Ordning overgår til fripolice</li>
+                        <li>850.000 kr. forbliver investeret</li>
+                        <li>Udbetales ved pension</li>
+                        <li><strong>Men:</strong> Forsikringer er ikke aktive</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">Ved nyt job kan hun genoptage indbetalinger og reaktivere forsikringer.</p>
+                </div>
+            </details>
         </div>
 
         <!-- Footer -->
