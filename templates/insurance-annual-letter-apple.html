@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dit år 2024</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #000000 0%, #1d1d1f 100%);
+            color: #f5f5f7;
+            text-align: center;
+            padding: 80px 20px 60px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            line-height: 1.07;
+        }
+
+        .hero .subtitle {
+            font-size: 28px;
+            font-weight: 400;
+            color: #a1a1a6;
+            letter-spacing: -0.01em;
+        }
+
+        /* Stats Hero */
+        .stats-hero {
+            background: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .stats-hero h2 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #86868b;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 40px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #1d1d1f;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 17px;
+            color: #86868b;
+            font-weight: 400;
+        }
+
+        /* Insurance Cards */
+        .coverage-section {
+            background: #f5f5f7;
+            padding: 80px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #86868b;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            font-size: 40px;
+            font-weight: 600;
+            color: #1d1d1f;
+            letter-spacing: -0.02em;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1d1d1f;
+        }
+
+        .card .policy {
+            font-size: 13px;
+            color: #86868b;
+            margin-bottom: 24px;
+        }
+
+        .card-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f5f5f7;
+            font-size: 15px;
+        }
+
+        .card-detail:last-child {
+            border-bottom: none;
+        }
+
+        .card-detail-label {
+            color: #86868b;
+            font-weight: 400;
+        }
+
+        .card-detail-value {
+            color: #1d1d1f;
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .card .price {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 2px solid #f5f5f7;
+        }
+
+        .card .price-amount {
+            font-size: 32px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .card .price-label {
+            font-size: 13px;
+            color: #86868b;
+            margin-top: 4px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: #fff;
+            padding: 80px 20px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+            max-width: 980px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        .benefit {
+            text-align: center;
+        }
+
+        .benefit-icon {
+            width: 64px;
+            height: 64px;
+            background: #f5f5f7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 20px;
+        }
+
+        .benefit h3 {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1d1d1f;
+        }
+
+        .benefit p {
+            font-size: 15px;
+            color: #86868b;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: #f5f5f7;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #1d1d1f;
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            font-size: 15px;
+            color: #1d1d1f;
+            padding: 16px;
+            background: #fff;
+            border-radius: 12px;
+        }
+
+        .contact-label {
+            font-size: 13px;
+            color: #86868b;
+            margin-bottom: 4px;
+        }
+
+        .footer-legal {
+            font-size: 12px;
+            color: #86868b;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #d2d2d7;
+        }
+
+        /* Highlight Badge */
+        .badge {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero .subtitle {
+                font-size: 21px;
+            }
+
+            .section-header p {
+                font-size: 28px;
+            }
+
+            .stat-number {
+                font-size: 48px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Dit år 2024</h1>
+        <p class="subtitle">Henrik Jensen</p>
+    </section>
+
+    <!-- Stats Hero -->
+    <section class="stats-hero">
+        <h2>Året i tal</h2>
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Skader</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">12</div>
+                <div class="stat-label">År som kunde</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">4.120</div>
+                <div class="stat-label">Spart i rabatter</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">25%</div>
+                <div class="stat-label">Skadefri bonus</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Cards -->
+    <section class="coverage-section">
+        <div class="section-header">
+            <h2>Dine forsikringer</h2>
+            <p>Fire dækninger. Fuld tryghed.</p>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Home Insurance -->
+            <div class="card">
+                <div class="card-icon">🏠</div>
+                <h3>Indbo</h3>
+                <p class="policy">IB-2024-891234</p>
+
+                <div class="card-detail">
+                    <span class="card-detail-label">Dækning</span>
+                    <span class="card-detail-value">1.200.000 kr</span>
+                </div>
+                <div class="card-detail">
+                    <span class="card-detail-label">Selvrisiko</span>
+                    <span class="card-detail-value">2.500 kr</span>
+                </div>
+                <div class="card-detail">
+                    <span class="card-detail-label">Rabat</span>
+                    <span class="card-detail-value">18%</span>
+                </div>
+
+                <div class="price">
+                    <div class="price-amount">4.280 kr</div>
+                    <div class="price-label">årligt</div>
+                </div>
+            </div>
+
+            <!-- Car Insurance -->
+            <div class="card">
+                <div class="card-icon">🚗</div>
+                <h3>Bil</h3>
+                <p class="policy">AA 12 345 · VW Golf 2021</p>
+
+                <div class="card-detail">
+                    <span class="card-detail-label">Type</span>
+                    <span class="card-detail-value">Kasko Komplet</span>
+                </div>
+                <div class="card-detail">
+                    <span class="card-detail-label">Selvrisiko</span>
+                    <span class="card-detail-value">4.000 kr</span>
+                </div>
+                <div class="card-detail">
+                    <span class="card-detail-label">Bonus</span>
+                    <span class="card-detail-value">12 år</span>
+                </div>
+
+                <div class="price">
+                    <div class="price-amount">7.240 kr</div>
+                    <div class="price-label">årligt</div>
+                </div>
+            </div>
+
+            <!-- Accident Insurance -->
+            <div class="card">
+                <div class="card-icon">⚕️</div>
+                <h3>Ulykke</h3>
+                <p class="policy">Familie Plus · 4 personer</p>
+
+                <div class="card-detail">
+                    <span class="card-detail-label">Invaliditet</span>
+                    <span class="card-detail-value">2.000.000 kr</span>
+                </div>
+                <div class="card-detail">
+                    <span class="card-detail-label">Dødssum</span>
+                    <span class="card-detail-value">100.000 kr</span>
+                </div>
+                <div class="card-detail">
+                    <span class="card-detail-label">Område</span>
+                    <span class="card-detail-value">Verden</span>
+                </div>
+
+                <div class="price">
+                    <div class="price-amount">2.890 kr</div>
+                    <div class="price-label">årligt</div>
+                </div>
+            </div>
+
+            <!-- Travel Insurance -->
+            <div class="card">
+                <div class="card-icon">✈️</div>
+                <h3>Rejse</h3>
+                <p class="policy">Helår · Hele verden</p>
+
+                <div class="card-detail">
+                    <span class="card-detail-label">Dækker</span>
+                    <span class="card-detail-value">4 personer</span>
+                </div>
+                <div class="card-detail">
+                    <span class="card-detail-label">Max. længde</span>
+                    <span class="card-detail-value">90 dage</span>
+                </div>
+                <div class="card-detail">
+                    <span class="card-detail-label">Selvrisiko</span>
+                    <span class="card-detail-value">0 kr</span>
+                </div>
+
+                <div class="price">
+                    <div class="price-amount">3.650 kr</div>
+                    <div class="price-label">årligt</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="section-header">
+            <h2>Nyt i 2025</h2>
+            <p>Mere værdi. Ingen ekstra omkostning.</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit">
+                <div class="benefit-icon">⚖️</div>
+                <h3>Retshjælp</h3>
+                <p>Op til 50.000 kr ved tvister</p>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon">🔒</div>
+                <h3>Cybersikkerhed</h3>
+                <p>Dækning ved identitetstyveri</p>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon">🌧️</div>
+                <h3>Klimadækning</h3>
+                <p>Udvidet ved ekstremregn</p>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon">📱</div>
+                <h3>App-support</h3>
+                <p>Anmeld skader på 2 minutter</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Har du spørgsmål?</h3>
+
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-label">Ring til os</div>
+                    <div>70 11 20 20</div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-label">Skriv til os</div>
+                    <div>kundeservice@tryg.dk</div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-label">Log ind</div>
+                    <div>www.tryg.dk/mit-tryg</div>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                © 2025 Tryg Forsikring A/S · CVR 24260666
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
