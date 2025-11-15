@@ -341,24 +341,35 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
+        <!-- ============================================
+             HEADER SEKTION
+             Tilpas: Firmanavn, år
+             ============================================ -->
         <header class="header">
             <h1>Dit Årsbrev fra Tryg Forsikring</h1>
             <p class="year">2024</p>
         </header>
 
-        <!-- Intro -->
+        <!-- ============================================
+             INTRO SEKTION
+             Tilpas: Kundenavn, år, personlig besked
+             ============================================ -->
         <section class="intro">
-            <p><strong>Kære kunde,</strong></p>
+            <p><strong>Kære Henrik Jensen,</strong></p>
             <p>Tak fordi du vælger at være kunde hos os. 2024 har været et begivenhedsrigt år, og vi er glade for at kunne give dig et overblik over dine forsikringer og vigtige informationer for det kommende år.</p>
-            <p>Dette brev indeholder en oversigt over dine aktive forsikringer, din opsparingsstatus, samt nyttige tips til hvordan du bedst beskytter dig og dine værdier.</p>
+            <p>Du har nu været kunde hos os i <strong>12 år</strong>, og vi sætter stor pris på dit langvarige samarbejde.</p>
         </section>
 
         <!-- Main Content -->
         <main class="content">
-            <!-- Dine Forsikringer -->
+            <!-- ============================================
+                 FORSIKRINGSOVERSIGT
+                 Tilpas: Forsikringstyper, beløb, detaljer
+                 Tilføj/fjern <details> sektioner efter behov
+                 ============================================ -->
             <h2 class="section-title">Dine forsikringer</h2>
 
+            <!-- INDBOFORSIKRING -->
             <details open>
                 <summary>Indboforsikring</summary>
                 <div class="accordion-content">
@@ -370,8 +381,12 @@
                                 <span class="detail-value">IB-2024-891234</span>
                             </div>
                             <div class="detail-row">
+                                <span class="detail-label">Adresse</span>
+                                <span class="detail-value">Søndergade 42, 3. tv, 8000 Aarhus C</span>
+                            </div>
+                            <div class="detail-row">
                                 <span class="detail-label">Forsikringssum</span>
-                                <span class="detail-value">850.000 kr.</span>
+                                <span class="detail-value">1.200.000 kr.</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">Selvrisiko</span>
@@ -379,29 +394,38 @@
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">Årlig præmie</span>
-                                <span class="detail-value">3.240 kr.</span>
+                                <span class="detail-value">4.280 kr.</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">Rabat</span>
-                                <span class="detail-value">15% (tryghedspakke)</span>
+                                <span class="detail-value">18% (tryghedspakke + loyalitet)</span>
                             </div>
                         </div>
                     </div>
                     <p style="margin-top: 1rem; font-size: 0.9rem; color: #64748b;">
-                        <strong>Hvad er dækket:</strong> Dine ejendele i hjemmet mod brand, indbrud, vandskade, el-skade og ansvar. Inkluderer også cykel ogværdigenstande.
+                        <strong>Hvad er dækket:</strong> Dine ejendele i hjemmet mod brand, indbrud, vandskade, el-skade og ansvar. Inkluderer også cykler, værdigenstande og elektronik op til 50.000 kr. pr. genstand.
                     </p>
                 </div>
             </details>
 
+            <!-- BILFORSIKRING -->
             <details>
                 <summary>Bilforsikring</summary>
                 <div class="accordion-content">
                     <div class="insurance-card">
-                        <h4>Kasko Komplet - VW Golf, AA 12 345</h4>
+                        <h4>Kasko Komplet - VW Golf 1.5 TSI</h4>
                         <div class="insurance-details">
                             <div class="detail-row">
                                 <span class="detail-label">Policenummer</span>
                                 <span class="detail-value">BF-2024-567890</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Registreringsnummer</span>
+                                <span class="detail-value">AA 12 345</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Årgang</span>
+                                <span class="detail-value">2021</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">Dækning</span>
@@ -413,80 +437,134 @@
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">Årlig præmie</span>
-                                <span class="detail-value">6.890 kr.</span>
+                                <span class="detail-value">7.240 kr.</span>
                             </div>
                             <div class="detail-row">
-                                <span class="detail-label">Rabat</span>
-                                <span class="detail-value">20% (skadefri bonus)</span>
+                                <span class="detail-label">Skadefri bonus</span>
+                                <span class="detail-value">12 år (25% rabat)</span>
                             </div>
                         </div>
                     </div>
                     <p style="margin-top: 1rem; font-size: 0.9rem; color: #64748b;">
-                        <strong>Hvad er dækket:</strong> Fuld kaskoforsikning med ansvar, vejhjælp og lånebil. Du har 8 års skadefri bonus.
+                        <strong>Hvad er dækket:</strong> Fuld kasko med ansvar, vejhjælp 24/7, lånebil ved skade og reparation, fri glasdækning. Tillykke med 12 års skadefri kørsel!
                     </p>
                 </div>
             </details>
 
+            <!-- ULYKKESFORSIKRING -->
             <details>
-                <summary>Husforsikring</summary>
+                <summary>Ulykkesforsikring</summary>
                 <div class="accordion-content">
                     <div class="insurance-card">
-                        <h4>Husforsikring - Rosenvej 42, 8000 Aarhus C</h4>
+                        <h4>Familie Ulykkesforsikring Plus</h4>
                         <div class="insurance-details">
                             <div class="detail-row">
                                 <span class="detail-label">Policenummer</span>
-                                <span class="detail-value">HF-2024-234567</span>
+                                <span class="detail-value">UF-2024-445566</span>
                             </div>
                             <div class="detail-row">
-                                <span class="detail-label">Forsikringssum (bygning)</span>
-                                <span class="detail-value">3.250.000 kr.</span>
+                                <span class="detail-label">Dækker</span>
+                                <span class="detail-value">Henrik Jensen + Maria Jensen + 2 børn</span>
                             </div>
                             <div class="detail-row">
-                                <span class="detail-label">Selvrisiko</span>
-                                <span class="detail-value">5.000 kr.</span>
+                                <span class="detail-label">Invaliditetssum (voksen)</span>
+                                <span class="detail-value">2.000.000 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Invaliditetssum (barn)</span>
+                                <span class="detail-value">1.000.000 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Dødsfaldssum</span>
+                                <span class="detail-value">100.000 kr.</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">Årlig præmie</span>
-                                <span class="detail-value">8.650 kr.</span>
-                            </div>
-                            <div class="detail-row">
-                                <span class="detail-label">Rabat</span>
-                                <span class="detail-value">10% (alarm)</span>
+                                <span class="detail-value">2.890 kr.</span>
                             </div>
                         </div>
                     </div>
                     <p style="margin-top: 1rem; font-size: 0.9rem; color: #64748b;">
-                        <strong>Hvad er dækket:</strong> Brand, storm, vandskade, indbrud og hærværk. Inkluderer også glas og el-skade.
+                        <strong>Hvad er dækket:</strong> Dækning ved ulykker døgnet rundt, både i Danmark og udlandet. Inkluderer tandskadedækning, fysioterapi og akut psykologhjælp.
                     </p>
                 </div>
             </details>
 
-            <!-- Året i tal -->
+            <!-- REJSEFORSIKRING -->
+            <details>
+                <summary>Rejseforsikring</summary>
+                <div class="accordion-content">
+                    <div class="insurance-card">
+                        <h4>Helårsforsikring Verden</h4>
+                        <div class="insurance-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Policenummer</span>
+                                <span class="detail-value">RF-2024-778899</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Dækker</span>
+                                <span class="detail-value">Hele familien (4 personer)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Område</span>
+                                <span class="detail-value">Hele verden (inkl. USA)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Max. rejselængde</span>
+                                <span class="detail-value">90 dage pr. rejse</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Selvrisiko</span>
+                                <span class="detail-value">0 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Årlig præmie</span>
+                                <span class="detail-value">3.650 kr.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #64748b;">
+                        <strong>Hvad er dækket:</strong> Sygdom, hjemtransport, afbestilling, bagageforsinkelse, personlige ejendele og ansvar på rejser. 24/7 alarmcentral.
+                    </p>
+                </div>
+            </details>
+
+            <!-- ============================================
+                 STATISTIK SEKTION
+                 Tilpas: Antal skader, præmier, besparelser
+                 ============================================ -->
             <h2 class="section-title" style="margin-top: 2.5rem;">Dit år i tal</h2>
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number">0</div>
-                    <div class="stat-label">Skadesanmeldelser</div>
+                    <div class="stat-label">Skadesanmeldelser i 2024</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">18.780 kr.</div>
+                    <div class="stat-number">18.060 kr.</div>
                     <div class="stat-label">Samlet årlig præmie</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">3.370 kr.</div>
+                    <div class="stat-number">4.120 kr.</div>
                     <div class="stat-label">Din besparelse i rabatter</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12 år</div>
+                    <div class="stat-label">Kunde hos os</div>
                 </div>
             </div>
             <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 2rem;">
-                Tillykke! Du har været skadefri hele 2024. Din skadefri bonus på bilforsikringen er øget til 8 år, hvilket giver dig en endnu bedre pris.
+                <strong>Tillykke!</strong> Du har været skadefri hele 2024. Din skadefri bonus på bilforsikringen er nu på imponerende 12 år, hvilket giver dig 25% rabat. Tak for din omhu og ansvarlige adfærd i trafikken!
             </p>
 
-            <!-- Vigtige ændringer -->
+            <!-- ============================================
+                 INFORMATIONER & ÆNDRINGER
+                 Tilpas: Prisjusteringer, nye fordele, tips
+                 ============================================ -->
             <h2 class="section-title">Vigtige informationer for 2025</h2>
 
             <div class="highlight-box">
                 <h4>Prisjustering pr. 1. januar 2025</h4>
-                <p>På grund af stigende omkostninger i branchen, vil dine forsikringer blive reguleret med i gennemsnit 3,2%. Din nye samlede årspræmie bliver 19.380 kr. Du kan se de opdaterede priser i din selvbetjening.</p>
+                <p>På grund af stigende omkostninger i branchen, vil dine forsikringer blive reguleret med i gennemsnit 2,8%. Din nye samlede årspræmie bliver 18.565 kr. Du kan se de opdaterede priser i din selvbetjening fra d. 15. december.</p>
             </div>
 
             <details>
@@ -510,24 +588,24 @@
             </details>
 
             <details>
-                <summary>Sådan får du mest muligt ud af din forsikring</summary>
+                <summary>Personlige anbefalinger til dig</summary>
                 <div class="accordion-content">
                     <ul class="tips-list">
                         <li>
                             <strong>Opdater din forsikringssum</strong>
-                            Husk at opdatere værdien af dit indbo, hvis du har købt nye værdigenstande.
+                            Med børnene blevet større, har I måske investeret i nye computere eller musikinstrumenter? Sørg for at din indboforsikringssum afspejler den aktuelle værdi.
                         </li>
                         <li>
-                            <strong>Installer tyverialarm</strong>
-                            Få op til 15% rabat på din husforsikring ved at installere godkendt alarm.
+                            <strong>Tænk på pension</strong>
+                            Som 42-årig er det et godt tidspunkt at se på pensionsforsikring. Kontakt os for en uforpligtende snak.
                         </li>
                         <li>
-                            <strong>Samle dine forsikringer</strong>
-                            Du sparer allerede med vores tryghedspakke. Overvej om andre familiemedlemmer kan drage nytte af samme fordel.
+                            <strong>Elcykel? Tjek din dækning</strong>
+                            Mange vælger elcykel i dag. Husk at anmelde værdifulde cykler over 25.000 kr. for fuld dækning.
                         </li>
                         <li>
-                            <strong>Brug vores skadeforebyggelse</strong>
-                            Download vores app og få personlige tips til at undgå skader i hjemmet og på farten.
+                            <strong>Download vores app</strong>
+                            Få hurtig adgang til forsikringsoversigt, anmeld skader og kontakt os direkte i appen.
                         </li>
                     </ul>
                 </div>
