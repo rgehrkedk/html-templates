@@ -31,10 +31,7 @@ jobs:
       - name: Build and deploy
         run: |
           npm run build
-          # Copy built index.html and assets to root for GitHub Pages
-          cp dist/index.html index.html
-          rm -rf assets
-          cp -r dist/assets assets
+          # deploy.js already copies index.html and assets to root
           if [ -n "$(git status --porcelain)" ]; then
             git add index.html assets
             git commit -m "Auto-update built files for GitHub Pages"
