@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm run tokens:build && vite",
-    "build": "npm run tokens:build && vite build && node build-index.js",
+    "build": "npm run tokens:build && vite build && node build-index.js && node deploy.js",
     "preview": "vite preview",
     "tokens:build": "style-dictionary build --config ./style-dictionary.config.cjs",
     "prebuild": "echo 'Building design tokens and bundling application...'",
