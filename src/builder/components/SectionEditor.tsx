@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TemplateSection } from '../types/builder.types';
-import { VARIANT_FIELDS, EditableField } from '../data/variantFields';
+import { VARIANT_FIELDS } from '../data/variantFields';
 import { SECTION_DEFINITIONS } from '../data/sections';
 import styles from './SectionEditor.module.css';
 
