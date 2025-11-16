@@ -1,0 +1,112 @@
+import React, { useState, useMemo } from 'react';
+import { useBuilder } from '../BuilderContext';
+import { renderTemplate, generateFilename } from '../utils/templateRenderer';
+import { downloadHTML, copyToClipboard } from '../utils/htmlExporter';
+import styles from './PreviewExport.module.css';
+
+export const PreviewExport: React.FC = () => {
+  const { sections, colorPalette, selectedStyle, prevStep, reset } = useBuilder();
+  const [copied, setCopied] = useState(false);
+
+  const htmlContent = useMemo(() => {
+    if (!selectedStyle) return '';
+    return renderTemplate(sections, colorPalette, selectedStyle);
+  }, [sections, colorPalette, selectedStyle]);
+
+  const handleDownload = () => {
+    if (!selectedStyle) return;
+    const filename = generateFilename(selectedStyle);
+    downloadHTML(htmlContent, filename);
+  };
+
+  const handleCopy = async () => {
+    try {
+      await copyToClipboard(htmlContent);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
+  const handleStartOver = () => {
+    if (confirm('Are you sure? This will reset all your progress.')) {
+      reset();
+    }
+  };
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h1 className={styles.title}>Your Template is Ready!</h1>
+        <p className={styles.subtitle}>Download or copy the HTML below</p>
+      </div>
+
+      <div className={styles.summary}>
+        <div className={styles.summaryItem}>
+          <div className={styles.summaryLabel}>Style</div>
+          <div className={styles.summaryValue}>
+            {selectedStyle === 'classic' ? 'Classic' : 'Swiss'}
+          </div>
+        </div>
+        <div className={styles.summaryItem}>
+          <div className={styles.summaryLabel}>Sections</div>
+          <div className={styles.summaryValue}>{sections.length}</div>
+        </div>
+        <div className={styles.summaryItem}>
+          <div className={styles.summaryLabel}>Colors</div>
+          <div className={styles.colorPreview}>
+            <div
+              className={styles.colorSwatch}
+              style={{ background: colorPalette.brand }}
+              title="Brand"
+            />
+            <div
+              className={styles.colorSwatch}
+              style={{ background: colorPalette.accent }}
+              title="Accent"
+            />
+            <div
+              className={styles.colorSwatch}
+              style={{ background: colorPalette.neutral }}
+              title="Neutral"
+            />
+          </div>
+        </div>
+        <div className={styles.summaryItem}>
+          <div className={styles.summaryLabel}>Status</div>
+          <div className={styles.statusBadge}>✓ Tagged as "builded"</div>
+        </div>
+      </div>
+
+      <div className={styles.codeSection}>
+        <div className={styles.codeHeader}>
+          <h2 className={styles.codeTitle}>HTML Output</h2>
+          <button
+            className={copied ? styles.copiedButton : styles.copyButton}
+            onClick={handleCopy}
+          >
+            {copied ? '✓ Copied!' : '📋 Copy to Clipboard'}
+          </button>
+        </div>
+        <pre className={styles.codeBlock}>
+          <code>{htmlContent}</code>
+        </pre>
+      </div>
+
+      <div className={styles.actions}>
+        <button className={styles.backButton} onClick={prevStep}>
+          ← Back
+        </button>
+        <div className={styles.actionGroup}>
+          <button className={styles.resetButton} onClick={handleStartOver}>
+            Start Over
+          </button>
+          <button className={styles.downloadButton} onClick={handleDownload}>
+            ⬇ Download HTML
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
