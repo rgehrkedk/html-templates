@@ -54,6 +54,15 @@ export const BuilderProvider: React.FC<{ children: ReactNode }> = ({ children })
     }));
   };
 
+  const updateSection = (id: string, data: Record<string, any>) => {
+    setState((prev) => ({
+      ...prev,
+      sections: prev.sections.map((s) =>
+        s.id === id ? { ...s, data: { ...s.data, ...data } } : s
+      ),
+    }));
+  };
+
   const moveSectionUp = (id: string) => {
     setState((prev) => {
       const sections = [...prev.sections];
@@ -102,6 +111,7 @@ export const BuilderProvider: React.FC<{ children: ReactNode }> = ({ children })
     setColors,
     addSection,
     removeSection,
+    updateSection,
     moveSectionUp,
     moveSectionDown,
     nextStep,

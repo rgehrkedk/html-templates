@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useBuilder } from '../BuilderContext';
 import { SECTION_DEFINITIONS } from '../data/sections';
 import { SectionType, VariantDefinition } from '../types/builder.types';
+import { SectionEditor } from '../components/SectionEditor';
+import { getDefaultData } from '../data/variantFields';
 import styles from './SectionBuilder.module.css';
 
 type PickerMode = 'section' | 'variant' | null;
@@ -11,6 +13,7 @@ export const SectionBuilder: React.FC = () => {
     sections,
     addSection,
     removeSection,
+    updateSection,
     moveSectionUp,
     moveSectionDown,
     nextStep,
@@ -32,9 +35,13 @@ export const SectionBuilder: React.FC = () => {
   const handleVariantSelect = (variant: VariantDefinition) => {
     if (!selectedSectionType) return;
 
+    // Get default data for this variant
+    const defaultData = getDefaultData(variant.id);
+
     addSection({
       type: selectedSectionType,
       variant: variant.id,
+      data: defaultData,
     });
 
     // Reset picker
@@ -77,47 +84,18 @@ export const SectionBuilder: React.FC = () => {
             <div className={styles.sectionsContainer}>
               {sections
                 .sort((a, b) => a.order - b.order)
-                .map((section, index) => {
-                  const definition = SECTION_DEFINITIONS.find((def) => def.type === section.type);
-                  const variant = definition?.variants.find((v) => v.id === section.variant);
-
-                  return (
-                    <div key={section.id} className={styles.sectionItem}>
-                      <div className={styles.sectionIcon}>{definition?.icon}</div>
-                      <div className={styles.sectionInfo}>
-                        <div className={styles.sectionName}>
-                          {definition?.name} - {variant?.name}
-                        </div>
-                        <div className={styles.sectionDescription}>{variant?.description}</div>
-                      </div>
-                      <div className={styles.sectionActions}>
-                        <button
-                          className={styles.actionButton}
-                          onClick={() => moveSectionUp(section.id)}
-                          disabled={index === 0}
-                          title="Move up"
-                        >
-                          ↑
-                        </button>
-                        <button
-                          className={styles.actionButton}
-                          onClick={() => moveSectionDown(section.id)}
-                          disabled={index === sections.length - 1}
-                          title="Move down"
-                        >
-                          ↓
-                        </button>
-                        <button
-                          className={styles.removeButton}
-                          onClick={() => removeSection(section.id)}
-                          title="Remove"
-                        >
-                          ×
-                        </button>
-                      </div>
-                    </div>
-                  );
-                })}
+                .map((section, index) => (
+                  <SectionEditor
+                    key={section.id}
+                    section={section}
+                    onUpdate={(data) => updateSection(section.id, data)}
+                    onRemove={() => removeSection(section.id)}
+                    onMoveUp={() => moveSectionUp(section.id)}
+                    onMoveDown={() => moveSectionDown(section.id)}
+                    canMoveUp={index > 0}
+                    canMoveDown={index < sections.length - 1}
+                  />
+                ))}
             </div>
           )}
 
