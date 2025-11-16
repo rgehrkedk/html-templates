@@ -86,6 +86,7 @@ export interface BuilderContextType extends TemplateBuilderState {
   setColors: (colors: ColorPalette) => void;
   addSection: (section: Omit<TemplateSection, 'id' | 'order'>) => void;
   removeSection: (id: string) => void;
+  updateSection: (id: string, data: Record<string, any>) => void;
   moveSectionUp: (id: string) => void;
   moveSectionDown: (id: string) => void;
   nextStep: () => void;

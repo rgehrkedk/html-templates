@@ -1,5 +1,5 @@
 import { TemplateSection, ColorPalette, StyleType } from '../types/builder.types';
-import { VARIANT_TEMPLATES } from '../data/variants';
+import { VARIANT_RENDERERS } from './variantRenderers';
 import { generateCSSVariables } from './colorGenerator';
 
 const STYLE_BASE_CSS: Record<StyleType, string> = {
@@ -57,7 +57,10 @@ export function renderTemplate(
 
   const sortedSections = [...sections].sort((a, b) => a.order - b.order);
   const sectionsHTML = sortedSections
-    .map((section) => VARIANT_TEMPLATES[section.variant] || '')
+    .map((section) => {
+      const renderer = VARIANT_RENDERERS[section.variant];
+      return renderer ? renderer(section.data || {}) : '';
+    })
     .join('\n');
 
   const buildDate = new Date().toISOString();
