@@ -1,0 +1,104 @@
+.builderApp {
+  min-height: 100vh;
+  background: var(--theme-light-color-background);
+}
+
+.progressBar {
+  background: white;
+  border-bottom: 1px solid var(--theme-light-color-border);
+  padding: 2rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.progressSteps {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.stepNumber {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--theme-light-color-border);
+  color: var(--theme-light-color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.step.active .stepNumber {
+  background: var(--theme-light-color-primary);
+  color: white;
+  box-shadow: 0 0 0 4px var(--theme-light-color-primary-subtle);
+}
+
+.stepLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--theme-light-color-text-secondary);
+  transition: color 0.3s ease;
+}
+
+.step.active .stepLabel {
+  color: var(--theme-light-color-primary);
+}
+
+.progressLine {
+  flex: 1;
+  height: 2px;
+  background: var(--theme-light-color-border);
+  margin: 0 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.stepContent {
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .progressBar {
+    padding: 1rem;
+  }
+
+  .stepLabel {
+    font-size: 0.75rem;
+  }
+
+  .stepNumber {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
+  }
+
+  .progressLine {
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stepLabel {
+    display: none;
+  }
+
+  .progressLine {
+    margin: 0 0.25rem;
+  }
+}
