@@ -130,12 +130,12 @@ export const VARIANT_RENDERERS: Record<string, RenderFunction> = {
   'accordion-multi': (data) => {
     const items = (data.items || 'Section 1:Content 1,Section 2:Content 2,Section 3:Content 3')
       .split(',')
-      .map(item => {
+      .map((item: string) => {
         const [title, content] = item.split(':');
         return { title: title?.trim() || 'Section', content: content?.trim() || 'Content' };
       });
 
-    const itemsHTML = items.map((item, index) => `
+    const itemsHTML = items.map((item: { title: string; content: string }, index: number) => `
       <details style="${index < items.length - 1 ? 'border-bottom: 1px solid var(--color-border);' : ''} padding: 1rem;">
         <summary style="cursor: pointer; font-weight: 600; color: var(--color-text); user-select: none; list-style: none;">
           ▶ ${item.title}
@@ -217,7 +217,7 @@ export const VARIANT_RENDERERS: Record<string, RenderFunction> = {
   'timeline-vertical': (data) => {
     const items = (data.items || 'January 2024:Milestone:Description')
       .split(',')
-      .map(item => {
+      .map((item: string) => {
         const [date, title, desc] = item.split(':');
         return {
           date: date?.trim() || 'Date',
@@ -226,7 +226,7 @@ export const VARIANT_RENDERERS: Record<string, RenderFunction> = {
         };
       });
 
-    const itemsHTML = items.map((item, index) => `
+    const itemsHTML = items.map((item: { date: string; title: string; desc: string }, index: number) => `
       <div style="position: relative; margin-bottom: ${index < items.length - 1 ? '2rem' : '0'};">
         <div style="position: absolute; left: -2rem; width: 16px; height: 16px; background: ${index === items.length - 1 ? 'var(--color-accent)' : 'var(--color-brand)'}; border-radius: 50%; border: 2px solid white;"></div>
         <div style="font-weight: 600; color: var(--color-brand); margin-bottom: 0.25rem;">${item.date}</div>
@@ -248,10 +248,10 @@ export const VARIANT_RENDERERS: Record<string, RenderFunction> = {
   'timeline-simple': (data) => {
     const items = (data.items || 'January 2024: First milestone\nMarch 2024: Second phase')
       .split('\n')
-      .map(item => item.trim())
-      .filter(item => item);
+      .map((item: string) => item.trim())
+      .filter((item: string) => item);
 
-    const itemsHTML = items.map(item => `<li>${item}</li>`).join('');
+    const itemsHTML = items.map((item: string) => `<li>${item}</li>`).join('');
 
     return `
       <section style="padding: 2rem 1rem;">
