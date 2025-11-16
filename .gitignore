@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.vite
+src/styles/tokens/
+# Keep deployed assets for GitHub Pages
+!assets/

@@ -1,0 +1,24 @@
+.card {
+  background: var(--theme-light-color-background);
+  border: 1px solid var(--theme-light-color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  transition: all 0.3s ease;
+  box-shadow: var(--theme-light-shadow-card);
+}
+
+.card:hover {
+  box-shadow: var(--theme-light-shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+/* Dark theme */
+[data-theme="dark"] .card {
+  background: var(--theme-dark-color-surface);
+  border-color: var(--theme-dark-color-border);
+  box-shadow: var(--theme-dark-shadow-card);
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: var(--theme-dark-shadow-card-hover);
+}

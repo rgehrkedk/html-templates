@@ -2,9 +2,13 @@
   "name": "html-templates",
   "version": "1.0.0",
   "description": "HTML templates til e-Boks beskeder",
+  "type": "module",
   "scripts": {
-    "build": "node build-index.js",
-    "prebuild": "echo 'Opdaterer index.html med alle templates...'",
+    "dev": "npm run tokens:build && vite",
+    "build": "npm run tokens:build && vite build && node build-index.js && node deploy.js",
+    "preview": "vite preview",
+    "tokens:build": "style-dictionary build --config ./style-dictionary.config.cjs",
+    "prebuild": "echo 'Building design tokens and bundling application...'",
     "postbuild": "echo 'Færdig!'"
   },
   "keywords": [
@@ -13,5 +17,18 @@
     "e-boks"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "style-dictionary": "^3.9.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8"
+  }
 }

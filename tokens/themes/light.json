@@ -1,0 +1,47 @@
+{
+  "theme": {
+    "light": {
+      "color": {
+        "primary": { "value": "{color.blue.600.value}" },
+        "primaryHover": { "value": "{color.blue.700.value}" },
+        "secondary": { "value": "{color.slate.500.value}" },
+        "success": { "value": "{color.green.600.value}" },
+        "background": { "value": "{color.white.value}" },
+        "surface": { "value": "{color.slate.50.value}" },
+        "border": { "value": "{color.slate.200.value}" },
+        "text": {
+          "primary": { "value": "{color.slate.800.value}" },
+          "secondary": { "value": "{color.slate.500.value}" },
+          "inverse": { "value": "{color.white.value}" }
+        },
+        "button": {
+          "primary": {
+            "background": { "value": "{color.blue.600.value}" },
+            "backgroundHover": { "value": "{color.blue.700.value}" },
+            "text": { "value": "{color.white.value}" }
+          },
+          "secondary": {
+            "background": { "value": "transparent" },
+            "backgroundHover": { "value": "{color.slate.100.value}" },
+            "border": { "value": "{color.slate.300.value}" },
+            "text": { "value": "{color.slate.700.value}" }
+          }
+        },
+        "tag": {
+          "industry": {
+            "background": { "value": "{color.blue.100.value}" },
+            "text": { "value": "{color.blue.700.value}" }
+          },
+          "style": {
+            "background": { "value": "{color.slate.100.value}" },
+            "text": { "value": "{color.slate.700.value}" }
+          }
+        }
+      },
+      "shadow": {
+        "card": { "value": "{shadow.md.value}" },
+        "cardHover": { "value": "{shadow.lg.value}" }
+      }
+    }
+  }
+}
