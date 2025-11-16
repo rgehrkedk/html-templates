@@ -25,7 +25,7 @@ const filesToDeploy = [
 
 console.log('📦 Preparing deployment...');
 
-// Copy index.html
+// Copy built index.html to root for GitHub Pages
 const indexSrc = path.join(distDir, 'index.html');
 const indexDest = path.join(rootDir, 'index.html');
 if (fs.existsSync(indexSrc)) {

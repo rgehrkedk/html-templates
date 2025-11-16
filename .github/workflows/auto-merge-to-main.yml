@@ -28,12 +28,13 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Build index.html
+      - name: Build and deploy
         run: |
           npm run build
+          # deploy.js already copies index.html and assets to root
           if [ -n "$(git status --porcelain)" ]; then
-            git add index.html
-            git commit -m "Auto-update index.html with all templates"
+            git add index.html assets
+            git commit -m "Auto-update built files for GitHub Pages"
           fi
 
       - name: Merge to main

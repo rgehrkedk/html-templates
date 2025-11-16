@@ -7,6 +7,7 @@ const INDUSTRIES: Array<{ value: IndustryType | 'alle'; label: string }> = [
   { value: 'alle', label: 'Alle' },
   { value: 'forsikring', label: 'Forsikring' },
   { value: 'pension', label: 'Pension' },
+  { value: 'builded', label: '🛠️ Builded' },
 ];
 
 const STYLES: Array<{ value: StyleType | 'alle'; label: string }> = [
