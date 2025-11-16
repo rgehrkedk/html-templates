@@ -1,6 +1,7 @@
 import { Template } from '../types/template';
+import { getTemplates as getBuildedTemplates } from '../utils/templateStorage';
 
-export const templates: Template[] = [
+const staticTemplates: Template[] = [
   {
     id: 'insurance-annual-letter',
     title: 'Årsbrev - Forsikring (Classic)',
@@ -42,3 +43,28 @@ export const templates: Template[] = [
     filename: 'pension-fripolice-notice.html'
   }
 ];
+
+/**
+ * Get all templates including static templates and builded templates from localStorage
+ */
+export function getAllTemplates(): Template[] {
+  const buildedTemplates = getBuildedTemplates();
+
+  // Convert builded templates to Template format
+  const buildedAsTemplates: Template[] = buildedTemplates.map(bt => ({
+    id: bt.id,
+    title: bt.title,
+    description: bt.description,
+    industry: 'builded' as any, // Special tag for builded templates
+    style: bt.style,
+    filename: '', // No filename, content is in localStorage
+    htmlContent: bt.htmlContent,
+    colors: bt.colors,
+    createdAt: bt.createdAt,
+  }));
+
+  return [...buildedAsTemplates, ...staticTemplates];
+}
+
+// Keep old export for backward compatibility
+export const templates = staticTemplates;

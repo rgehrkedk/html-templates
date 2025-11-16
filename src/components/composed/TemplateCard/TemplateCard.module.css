@@ -36,6 +36,17 @@
   flex: 1;
 }
 
+.deleteButton {
+  background: #fee2e2 !important;
+  color: #dc2626 !important;
+  border-color: #fca5a5 !important;
+}
+
+.deleteButton:hover {
+  background: #fecaca !important;
+  border-color: #f87171 !important;
+}
+
 /* Dark theme */
 [data-theme="dark"] .title {
   color: var(--theme-dark-color-text-primary);
