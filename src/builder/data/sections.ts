@@ -5,7 +5,7 @@ export const SECTION_DEFINITIONS: SectionDefinition[] = [
     type: 'header',
     name: 'Header',
     description: 'Page header with company name',
-    icon: '📋',
+    icon: 'H',
     variants: [
       {
         id: 'header-centered',
@@ -28,7 +28,7 @@ export const SECTION_DEFINITIONS: SectionDefinition[] = [
     type: 'text-block',
     name: 'Text Block',
     description: 'Text content with optional badge',
-    icon: '📝',
+    icon: 'T',
     variants: [
       {
         id: 'text-standard',
@@ -51,7 +51,7 @@ export const SECTION_DEFINITIONS: SectionDefinition[] = [
     type: 'infobox',
     name: 'InfoBox',
     description: 'Information, warning, or alert box',
-    icon: 'ℹ️',
+    icon: 'i',
     variants: [
       {
         id: 'infobox-info',
@@ -74,7 +74,7 @@ export const SECTION_DEFINITIONS: SectionDefinition[] = [
     type: 'accordion',
     name: 'Accordion',
     description: 'Collapsible content sections',
-    icon: '🎵',
+    icon: 'A',
     variants: [
       {
         id: 'accordion-simple',
@@ -92,7 +92,7 @@ export const SECTION_DEFINITIONS: SectionDefinition[] = [
     type: 'table',
     name: 'Table',
     description: 'Data table',
-    icon: '📊',
+    icon: 'TB',
     variants: [
       {
         id: 'table-striped',
@@ -110,7 +110,7 @@ export const SECTION_DEFINITIONS: SectionDefinition[] = [
     type: 'timeline',
     name: 'Timeline',
     description: 'Timeline or chronological list',
-    icon: '⏱️',
+    icon: 'TL',
     variants: [
       {
         id: 'timeline-vertical',
@@ -128,7 +128,7 @@ export const SECTION_DEFINITIONS: SectionDefinition[] = [
     type: 'footer',
     name: 'Footer',
     description: 'Page footer',
-    icon: '🔽',
+    icon: 'F',
     variants: [
       {
         id: 'footer-centered',

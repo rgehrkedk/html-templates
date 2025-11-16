@@ -21,8 +21,8 @@ export const VARIANT_RENDERERS: Record<string, RenderFunction> = {
 
   'header-logo': (data) => `
     <header style="display: flex; align-items: center; gap: 1rem; padding: 2rem 1rem; background: var(--color-brand); color: white;">
-      <div style="width: 48px; height: 48px; background: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">
-        ${data.logo || '🏢'}
+      <div style="width: 48px; height: 48px; background: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: var(--color-brand); flex-shrink: 0;">
+        ${data.logo || 'LOGO'}
       </div>
       <h1 style="margin: 0; font-size: 2rem; font-weight: 700;">${data.title || 'Company Name'}</h1>
     </header>
@@ -66,7 +66,7 @@ export const VARIANT_RENDERERS: Record<string, RenderFunction> = {
     <section style="padding: 2rem 1rem;">
       <div style="background: #dbeafe; border-left: 4px solid var(--color-info); padding: 1rem 1.5rem; border-radius: 4px;">
         <div style="display: flex; gap: 0.75rem; align-items: start;">
-          <div style="font-size: 1.5rem; flex-shrink: 0;">ℹ️</div>
+          <div style="width: 24px; height: 24px; background: var(--color-info); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 700; flex-shrink: 0;">i</div>
           <div>
             <h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; color: #1e40af;">${data.title || 'Information'}</h3>
             <p style="margin: 0; line-height: 1.5; color: #1e3a8a;">
@@ -82,7 +82,7 @@ export const VARIANT_RENDERERS: Record<string, RenderFunction> = {
     <section style="padding: 2rem 1rem;">
       <div style="background: #fef3c7; border-left: 4px solid var(--color-warning); padding: 1rem 1.5rem; border-radius: 4px;">
         <div style="display: flex; gap: 0.75rem; align-items: start;">
-          <div style="font-size: 1.5rem; flex-shrink: 0;">⚠️</div>
+          <div style="width: 24px; height: 24px; background: var(--color-warning); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 700; flex-shrink: 0;">!</div>
           <div>
             <h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; color: #92400e;">${data.title || 'Warning'}</h3>
             <p style="margin: 0; line-height: 1.5; color: #78350f;">
@@ -98,7 +98,7 @@ export const VARIANT_RENDERERS: Record<string, RenderFunction> = {
     <section style="padding: 2rem 1rem;">
       <div style="background: #fee2e2; border-left: 4px solid var(--color-error); padding: 1rem 1.5rem; border-radius: 4px;">
         <div style="display: flex; gap: 0.75rem; align-items: start;">
-          <div style="font-size: 1.5rem; flex-shrink: 0;">❌</div>
+          <div style="width: 24px; height: 24px; background: var(--color-error); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 700; flex-shrink: 0;">X</div>
           <div>
             <h3 style="margin: 0 0 0.5rem 0; font-size: 1.125rem; color: #991b1b;">${data.title || 'Alert'}</h3>
             <p style="margin: 0; line-height: 1.5; color: #7f1d1d;">

@@ -75,8 +75,9 @@ export const SectionEditor: React.FC<SectionEditorProps> = ({
           <button
             className={styles.editBtn}
             onClick={() => setIsEditing(!isEditing)}
+            title={isEditing ? 'View mode' : 'Edit mode'}
           >
-            {isEditing ? '👁️' : '✏️'}
+            {isEditing ? 'View' : 'Edit'}
           </button>
           <button
             className={styles.removeBtn}
