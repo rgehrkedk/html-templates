@@ -2,11 +2,14 @@ import React, { useState, useMemo } from 'react';
 import { useBuilder } from '../BuilderContext';
 import { renderTemplate, generateFilename } from '../utils/templateRenderer';
 import { downloadHTML, copyToClipboard } from '../utils/htmlExporter';
+import { saveTemplate } from '../../utils/templateStorage';
+import { SECTION_DEFINITIONS } from '../data/sections';
 import styles from './PreviewExport.module.css';
 
 export const PreviewExport: React.FC = () => {
   const { sections, colorPalette, selectedStyle, prevStep, reset } = useBuilder();
   const [copied, setCopied] = useState(false);
+  const [saved, setSaved] = useState(false);
 
   const htmlContent = useMemo(() => {
     if (!selectedStyle) return '';
@@ -27,6 +30,42 @@ export const PreviewExport: React.FC = () => {
     } catch (err) {
       console.error('Failed to copy:', err);
     }
+  };
+
+  const handleSaveToGallery = () => {
+    if (!selectedStyle) return;
+
+    // Generate title from sections
+    const sectionTypes = sections.map(s => {
+      const def = SECTION_DEFINITIONS.find(d => d.type === s.type);
+      return def?.name || s.type;
+    });
+    const title = `Custom Template - ${selectedStyle.charAt(0).toUpperCase() + selectedStyle.slice(1)}`;
+
+    const template = {
+      id: `builded-${Date.now()}`,
+      title,
+      description: `Generated template with ${sections.length} sections: ${sectionTypes.join(', ')}`,
+      style: selectedStyle,
+      sectionCount: sections.length,
+      htmlContent,
+      createdAt: new Date().toISOString(),
+      colors: {
+        brand: colorPalette.brand,
+        accent: colorPalette.accent,
+        neutral: colorPalette.neutral,
+      },
+    };
+
+    saveTemplate(template);
+    setSaved(true);
+
+    // Show confirmation and navigate to home
+    setTimeout(() => {
+      if (confirm('Template saved to gallery! Go to gallery now?')) {
+        window.location.hash = '';
+      }
+    }, 100);
   };
 
   const handleStartOver = () => {
@@ -101,6 +140,13 @@ export const PreviewExport: React.FC = () => {
         <div className={styles.actionGroup}>
           <button className={styles.resetButton} onClick={handleStartOver}>
             Start Over
+          </button>
+          <button
+            className={saved ? styles.savedButton : styles.saveButton}
+            onClick={handleSaveToGallery}
+            disabled={saved}
+          >
+            {saved ? '✓ Saved to Gallery' : '💾 Save to Gallery'}
           </button>
           <button className={styles.downloadButton} onClick={handleDownload}>
             ⬇ Download HTML

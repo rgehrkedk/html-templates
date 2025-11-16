@@ -25,13 +25,10 @@ const filesToDeploy = [
 
 console.log('📦 Preparing deployment...');
 
-// Copy index.html
-const indexSrc = path.join(distDir, 'index.html');
-const indexDest = path.join(rootDir, 'index.html');
-if (fs.existsSync(indexSrc)) {
-  fs.copyFileSync(indexSrc, indexDest);
-  console.log('✓ Copied index.html to root');
-}
+// Note: index.html in root is the development version with /src/main.tsx entry point
+// We don't copy the built index.html to avoid overwriting it
+// GitHub Pages will be configured to serve from dist/ folder instead
+console.log('✓ Keeping development index.html for Vite');
 
 // Remove old assets folder if exists
 const assetsDestDir = path.join(rootDir, 'assets');

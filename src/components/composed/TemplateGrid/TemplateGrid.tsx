@@ -2,7 +2,7 @@ import { TemplateCard } from '../TemplateCard';
 import { TemplateGridProps } from './TemplateGrid.types';
 import styles from './TemplateGrid.module.css';
 
-export const TemplateGrid = ({ templates }: TemplateGridProps) => {
+export const TemplateGrid = ({ templates, onTemplateDelete }: TemplateGridProps) => {
   if (templates.length === 0) {
     return (
       <div className={styles.container}>
@@ -20,7 +20,11 @@ export const TemplateGrid = ({ templates }: TemplateGridProps) => {
     <main className={styles.container}>
       <div className={styles.grid}>
         {templates.map((template) => (
-          <TemplateCard key={template.id} template={template} />
+          <TemplateCard
+            key={template.id}
+            template={template}
+            onDelete={onTemplateDelete}
+          />
         ))}
       </div>
     </main>

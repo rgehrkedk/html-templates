@@ -185,6 +185,30 @@
   border-color: #f87171;
 }
 
+.saveButton,
+.savedButton {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saveButton:hover {
+  background: #059669;
+  transform: translateY(-1px);
+  box-shadow: var(--theme-light-shadow-md);
+}
+
+.savedButton {
+  background: #6ee7b7;
+  cursor: not-allowed;
+}
+
 .downloadButton {
   background: var(--theme-light-color-primary);
   color: white;
