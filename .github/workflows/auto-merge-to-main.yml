@@ -32,7 +32,17 @@ jobs:
         run: |
           git fetch origin main:main || git checkout -b main
           git checkout main
-          git merge --no-ff ${{ github.ref_name }} -m "Auto-merge ${{ github.ref_name }} to main"
+          git merge --no-ff ${{ github.ref_name }} -m "Auto-merge ${{ github.ref_name }} to main" || true
+          # Resolve conflicts by accepting incoming changes (feature branch)
+          if [ -n "$(git status --porcelain | grep '^UU\|^AA\|^DD')" ]; then
+            echo "Resolving merge conflicts..."
+            # For conflicted files, accept theirs (feature branch) version
+            git status --porcelain | grep '^UU\|^AA' | awk '{print $2}' | xargs -I {} git checkout --theirs {} || true
+            # For deleted files, remove them
+            git status --porcelain | grep '^UD\|^DU' | awk '{print $2}' | xargs -I {} git rm {} || true
+            git add -A
+            git commit -m "Auto-merge ${{ github.ref_name }} to main (conflicts resolved)"
+          fi
 
       - name: Install dependencies
         run: npm install
