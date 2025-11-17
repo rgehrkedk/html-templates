@@ -42,11 +42,6 @@ export const StyleSelection: React.FC = () => {
               }`}
               onClick={() => handleStyleSelect(style.id)}
             >
-              <div className={styles.stylePreview}>
-                <div className={styles.previewIcon}>
-                  {style.id === 'classic' ? '📄' : '📐'}
-                </div>
-              </div>
               <h3 className={styles.styleName}>{style.name}</h3>
               <p className={styles.styleDescription}>{style.description}</p>
               <div className={styles.styleDetails}>{style.preview}</div>
