@@ -3,16 +3,20 @@ import {
   TemplateBuilderState,
   BuilderContextType,
   StyleType,
+  BorderRadiusStyle,
   ColorPalette,
   TemplateSection,
 } from './types/builder.types';
 
 const initialState: TemplateBuilderState = {
   selectedStyle: null,
+  borderRadius: 'soft',
   colorPalette: {
     brand: '#2563eb',
     accent: '#10b981',
     neutral: '#64748b',
+    warning: '#f59e0b',
+    error: '#ef4444',
   },
   sections: [],
   currentStep: 1,
@@ -25,6 +29,10 @@ export const BuilderProvider: React.FC<{ children: ReactNode }> = ({ children })
 
   const setStyle = (style: StyleType) => {
     setState((prev) => ({ ...prev, selectedStyle: style }));
+  };
+
+  const setBorderRadius = (radius: BorderRadiusStyle) => {
+    setState((prev) => ({ ...prev, borderRadius: radius }));
   };
 
   const setColors = (colors: ColorPalette) => {
@@ -108,6 +116,7 @@ export const BuilderProvider: React.FC<{ children: ReactNode }> = ({ children })
   const value: BuilderContextType = {
     ...state,
     setStyle,
+    setBorderRadius,
     setColors,
     addSection,
     removeSection,

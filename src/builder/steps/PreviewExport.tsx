@@ -7,14 +7,14 @@ import { SECTION_DEFINITIONS } from '../data/sections';
 import styles from './PreviewExport.module.css';
 
 export const PreviewExport: React.FC = () => {
-  const { sections, colorPalette, selectedStyle, prevStep, reset } = useBuilder();
+  const { sections, colorPalette, selectedStyle, borderRadius, prevStep, reset } = useBuilder();
   const [copied, setCopied] = useState(false);
   const [saved, setSaved] = useState(false);
 
   const htmlContent = useMemo(() => {
     if (!selectedStyle) return '';
-    return renderTemplate(sections, colorPalette, selectedStyle);
-  }, [sections, colorPalette, selectedStyle]);
+    return renderTemplate(sections, colorPalette, selectedStyle, borderRadius);
+  }, [sections, colorPalette, selectedStyle, borderRadius]);
 
   const handleDownload = () => {
     if (!selectedStyle) return;

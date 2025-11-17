@@ -1,4 +1,5 @@
 export type StyleType = 'classic' | 'swiss';
+export type BorderRadiusStyle = 'none' | 'soft' | 'rounded';
 
 export type SectionType =
   | 'header'
@@ -15,7 +16,18 @@ export interface ColorPalette {
   brand: string;
   accent: string;
   neutral: string;
+  warning: string;
+  error: string;
   generated?: GeneratedColors;
+}
+
+export interface BorderRadiusPreset {
+  sm: string;
+  md: string;
+  lg: string;
+  xl: string;
+  badge: string;
+  full: string;
 }
 
 export interface GeneratedColors {
@@ -37,11 +49,32 @@ export interface GeneratedColors {
   neutralDark: string;
   neutralDarker: string;
 
-  // Feedback colors
+  // Warning shades
+  warningLighter: string;
+  warningLight: string;
+  warningDark: string;
+  warningDarker: string;
+
+  // Error shades
+  errorLighter: string;
+  errorLight: string;
+  errorDark: string;
+  errorDarker: string;
+
+  // Feedback colors (semantic aliases)
   success: string;
-  warning: string;
-  error: string;
   info: string;
+
+  // InfoBox specific colors
+  infoBg: string;
+  infoHeading: string;
+  infoText: string;
+  warningBg: string;
+  warningHeading: string;
+  warningText: string;
+  errorBg: string;
+  errorHeading: string;
+  errorText: string;
 }
 
 export interface TemplateSection {
@@ -70,6 +103,7 @@ export interface VariantDefinition {
 export interface TemplateBuilderState {
   // Step 1
   selectedStyle: StyleType | null;
+  borderRadius: BorderRadiusStyle;
 
   // Step 2
   colorPalette: ColorPalette;
@@ -83,6 +117,7 @@ export interface TemplateBuilderState {
 
 export interface BuilderContextType extends TemplateBuilderState {
   setStyle: (style: StyleType) => void;
+  setBorderRadius: (radius: BorderRadiusStyle) => void;
   setColors: (colors: ColorPalette) => void;
   addSection: (section: Omit<TemplateSection, 'id' | 'order'>) => void;
   removeSection: (id: string) => void;

@@ -128,8 +128,122 @@
   opacity: 0.5;
 }
 
+/* ===========================
+   SECTION STYLES
+   =========================== */
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--theme-light-color-text-primary);
+}
+
+.sectionDescription {
+  color: var(--theme-light-color-text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* ===========================
+   BORDER RADIUS STYLES
+   =========================== */
+
+.radiusGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.radiusCard {
+  position: relative;
+  background: var(--theme-light-color-surface);
+  border: 2px solid var(--theme-light-color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.radiusCard:hover {
+  border-color: var(--theme-light-color-primary);
+  box-shadow: var(--theme-light-shadow-md);
+}
+
+.radiusCardSelected {
+  border-color: var(--theme-light-color-primary);
+  background: var(--theme-light-color-primary-subtle);
+  box-shadow: var(--theme-light-shadow-lg);
+}
+
+.radiusPreview {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.radiusPreviewBox {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
+.radiusPreviewBadge {
+  padding: 0.5rem 1rem;
+  background: #10b981;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.radiusInfo {
+  /* Container for text content */
+}
+
+.radiusName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--theme-light-color-text-primary);
+}
+
+.radiusDescription {
+  font-size: 0.875rem;
+  color: var(--theme-light-color-text-secondary);
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+.radiusValues {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.radiusValue {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: #f3f4f6;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #4b5563;
+  font-family: 'Courier New', monospace;
+}
+
 @media (max-width: 768px) {
-  .styleGrid {
+  .styleGrid,
+  .radiusGrid {
     grid-template-columns: 1fr;
   }
 

@@ -13,9 +13,9 @@ export const ColorPalette: React.FC = () => {
     // Generate colors whenever base colors change
     const generated = generateColorPalette(localPalette);
     setLocalPalette(generated);
-  }, [localPalette.brand, localPalette.accent, localPalette.neutral]);
+  }, [localPalette.brand, localPalette.accent, localPalette.neutral, localPalette.warning, localPalette.error]);
 
-  const handleColorChange = (key: 'brand' | 'accent' | 'neutral', value: string) => {
+  const handleColorChange = (key: 'brand' | 'accent' | 'neutral' | 'warning' | 'error', value: string) => {
     setLocalPalette((prev) => ({
       ...prev,
       [key]: value,
@@ -34,7 +34,7 @@ export const ColorPalette: React.FC = () => {
       <div className={styles.header}>
         <h1 className={styles.title}>Choose Your Colors</h1>
         <p className={styles.subtitle}>
-          Select three base colors - we'll auto-generate the rest
+          Select five base colors - we'll auto-generate shades and variations
         </p>
       </div>
 
@@ -104,6 +104,50 @@ export const ColorPalette: React.FC = () => {
             />
           </div>
         </div>
+
+        <div className={styles.colorInput}>
+          <label className={styles.label}>
+            <span className={styles.labelText}>Warning Color</span>
+            <span className={styles.labelHint}>Caution/warning color (usually amber/orange)</span>
+          </label>
+          <div className={styles.inputGroup}>
+            <input
+              type="color"
+              value={localPalette.warning}
+              onChange={(e) => handleColorChange('warning', e.target.value)}
+              className={styles.colorPicker}
+            />
+            <input
+              type="text"
+              value={localPalette.warning}
+              onChange={(e) => handleColorChange('warning', e.target.value)}
+              className={styles.textInput}
+              placeholder="#f59e0b"
+            />
+          </div>
+        </div>
+
+        <div className={styles.colorInput}>
+          <label className={styles.label}>
+            <span className={styles.labelText}>Error Color</span>
+            <span className={styles.labelHint}>Error/danger color (usually red)</span>
+          </label>
+          <div className={styles.inputGroup}>
+            <input
+              type="color"
+              value={localPalette.error}
+              onChange={(e) => handleColorChange('error', e.target.value)}
+              className={styles.colorPicker}
+            />
+            <input
+              type="text"
+              value={localPalette.error}
+              onChange={(e) => handleColorChange('error', e.target.value)}
+              className={styles.textInput}
+              placeholder="#ef4444"
+            />
+          </div>
+        </div>
       </div>
 
       {generated && (
@@ -132,6 +176,48 @@ export const ColorPalette: React.FC = () => {
           </div>
 
           <div className={styles.paletteSection}>
+            <h3 className={styles.sectionTitle}>Warning Shades</h3>
+            <div className={styles.swatchRow}>
+              <div className={styles.swatch} style={{ background: generated.warningLighter }}>
+                <span className={styles.swatchLabel}>Lighter</span>
+              </div>
+              <div className={styles.swatch} style={{ background: generated.warningLight }}>
+                <span className={styles.swatchLabel}>Light</span>
+              </div>
+              <div className={styles.swatch} style={{ background: localPalette.warning }}>
+                <span className={styles.swatchLabel}>Base</span>
+              </div>
+              <div className={styles.swatch} style={{ background: generated.warningDark }}>
+                <span className={styles.swatchLabel}>Dark</span>
+              </div>
+              <div className={styles.swatch} style={{ background: generated.warningDarker }}>
+                <span className={styles.swatchLabel}>Darker</span>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.paletteSection}>
+            <h3 className={styles.sectionTitle}>Error Shades</h3>
+            <div className={styles.swatchRow}>
+              <div className={styles.swatch} style={{ background: generated.errorLighter }}>
+                <span className={styles.swatchLabel}>Lighter</span>
+              </div>
+              <div className={styles.swatch} style={{ background: generated.errorLight }}>
+                <span className={styles.swatchLabel}>Light</span>
+              </div>
+              <div className={styles.swatch} style={{ background: localPalette.error }}>
+                <span className={styles.swatchLabel}>Base</span>
+              </div>
+              <div className={styles.swatch} style={{ background: generated.errorDark }}>
+                <span className={styles.swatchLabel}>Dark</span>
+              </div>
+              <div className={styles.swatch} style={{ background: generated.errorDarker }}>
+                <span className={styles.swatchLabel}>Darker</span>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.paletteSection}>
             <h3 className={styles.sectionTitle}>Feedback Colors</h3>
             <div className={styles.swatchRow}>
               <div className={styles.swatch} style={{ background: generated.info }}>
@@ -140,10 +226,10 @@ export const ColorPalette: React.FC = () => {
               <div className={styles.swatch} style={{ background: generated.success }}>
                 <span className={styles.swatchLabel}>Success</span>
               </div>
-              <div className={styles.swatch} style={{ background: generated.warning }}>
+              <div className={styles.swatch} style={{ background: localPalette.warning }}>
                 <span className={styles.swatchLabel}>Warning</span>
               </div>
-              <div className={styles.swatch} style={{ background: generated.error }}>
+              <div className={styles.swatch} style={{ background: localPalette.error }}>
                 <span className={styles.swatchLabel}>Error</span>
               </div>
             </div>

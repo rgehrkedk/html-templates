@@ -1,6 +1,8 @@
-import { TemplateSection, ColorPalette, StyleType } from '../types/builder.types';
+import { TemplateSection, ColorPalette, StyleType, BorderRadiusStyle } from '../types/builder.types';
 import { VARIANT_RENDERERS } from './variantRenderers';
 import { generateCSSVariables } from './colorGenerator';
+import { generateBorderRadiusVariables } from './borderRadiusGenerator';
+import { generateVariantStyles } from './variantStyles';
 
 const STYLE_BASE_CSS: Record<StyleType, string> = {
   classic: `
@@ -9,12 +11,12 @@ const STYLE_BASE_CSS: Record<StyleType, string> = {
       line-height: 1.6;
       margin: 0;
       padding: 0;
-      background: #f9fafb;
+      background: var(--color-background-gray);
     }
     .container {
       max-width: 800px;
       margin: 0 auto;
-      background: white;
+      background: var(--color-background);
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
     * {
@@ -27,12 +29,12 @@ const STYLE_BASE_CSS: Record<StyleType, string> = {
       line-height: 1.5;
       margin: 0;
       padding: 0;
-      background: #ffffff;
+      background: var(--color-background);
     }
     .container {
       max-width: 900px;
       margin: 0 auto;
-      background: white;
+      background: var(--color-background);
     }
     * {
       box-sizing: border-box;
@@ -50,10 +52,13 @@ const STYLE_BASE_CSS: Record<StyleType, string> = {
 export function renderTemplate(
   sections: TemplateSection[],
   palette: ColorPalette,
-  style: StyleType
+  style: StyleType,
+  borderRadius: BorderRadiusStyle
 ): string {
   const cssVariables = generateCSSVariables(palette);
+  const borderRadiusVars = generateBorderRadiusVariables(borderRadius);
   const baseCSS = STYLE_BASE_CSS[style];
+  const variantStyles = generateVariantStyles();
 
   const sortedSections = [...sections].sort((a, b) => a.order - b.order);
   const sectionsHTML = sortedSections
@@ -66,21 +71,42 @@ export function renderTemplate(
   const buildDate = new Date().toISOString();
 
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="HTML Template Builder">
   <meta name="template-style" content="${style}">
+  <meta name="template-border-radius" content="${borderRadius}">
   <meta name="template-status" content="builded">
   <meta name="template-build-date" content="${buildDate}">
   <title>Generated Template</title>
   <style>
-    ${cssVariables}
+    :root {
+      /* ===========================
+         COLOR SYSTEM
+         =========================== */
+${cssVariables}
 
-    ${baseCSS}
+      /* ===========================
+         BORDER RADIUS SYSTEM
+         =========================== */
+${borderRadiusVars}
+    }
 
-    /* Responsive adjustments */
+    /* ===========================
+       BASE STYLES
+       =========================== */
+${baseCSS}
+
+    /* ===========================
+       VARIANT STYLES
+       =========================== */
+${variantStyles}
+
+    /* ===========================
+       RESPONSIVE ADJUSTMENTS
+       =========================== */
     @media (max-width: 768px) {
       .container {
         margin: 0;
@@ -91,7 +117,9 @@ export function renderTemplate(
       }
     }
 
-    /* Details/Summary styling for accordion */
+    /* ===========================
+       DETAILS/SUMMARY (ACCORDION)
+       =========================== */
     details > summary {
       list-style: none;
     }

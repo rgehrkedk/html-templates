@@ -77,11 +77,34 @@ export function generateColorPalette(palette: ColorPalette): ColorPalette {
     neutralDark: darken(palette.neutral, 20),
     neutralDarker: darken(palette.neutral, 40),
 
-    // Feedback colors
+    // Warning shades
+    warningLighter: lighten(palette.warning, 40),
+    warningLight: lighten(palette.warning, 20),
+    warningDark: darken(palette.warning, 20),
+    warningDarker: darken(palette.warning, 40),
+
+    // Error shades
+    errorLighter: lighten(palette.error, 40),
+    errorLight: lighten(palette.error, 20),
+    errorDark: darken(palette.error, 20),
+    errorDarker: darken(palette.error, 40),
+
+    // Feedback colors (semantic aliases)
     success: palette.accent, // Use accent color as success (usually green)
-    warning: '#f59e0b', // Amber
-    error: '#ef4444', // Red
     info: palette.brand, // Use brand color as info (usually blue)
+
+    // InfoBox specific colors
+    infoBg: lighten(palette.brand, 40),        // Very light blue
+    infoHeading: darken(palette.brand, 20),    // Dark blue
+    infoText: darken(palette.brand, 40),       // Darker blue
+
+    warningBg: lighten(palette.warning, 40),   // Very light amber
+    warningHeading: darken(palette.warning, 20), // Dark amber/brown
+    warningText: darken(palette.warning, 40),  // Darker brown
+
+    errorBg: lighten(palette.error, 40),       // Very light red
+    errorHeading: darken(palette.error, 20),   // Dark red
+    errorText: darken(palette.error, 40),      // Darker red
   };
 
   return {
@@ -97,42 +120,84 @@ export function generateCSSVariables(palette: ColorPalette): string {
   const generated = palette.generated;
   if (!generated) return '';
 
-  return `:root {
-  /* Base colors */
+  return `  /* ===========================
+     BASE COLORS
+     =========================== */
   --color-brand: ${palette.brand};
   --color-accent: ${palette.accent};
   --color-neutral: ${palette.neutral};
+  --color-warning: ${palette.warning};
+  --color-error: ${palette.error};
 
-  /* Brand shades */
+  /* ===========================
+     BRAND SHADES
+     =========================== */
   --color-brand-lighter: ${generated.brandLighter};
   --color-brand-light: ${generated.brandLight};
   --color-brand-dark: ${generated.brandDark};
   --color-brand-darker: ${generated.brandDarker};
 
-  /* Accent shades */
+  /* ===========================
+     ACCENT SHADES
+     =========================== */
   --color-accent-lighter: ${generated.accentLighter};
   --color-accent-light: ${generated.accentLight};
   --color-accent-dark: ${generated.accentDark};
   --color-accent-darker: ${generated.accentDarker};
 
-  /* Neutral shades */
+  /* ===========================
+     NEUTRAL SHADES
+     =========================== */
   --color-neutral-lighter: ${generated.neutralLighter};
   --color-neutral-light: ${generated.neutralLight};
   --color-neutral-dark: ${generated.neutralDark};
   --color-neutral-darker: ${generated.neutralDarker};
 
-  /* Feedback colors */
+  /* ===========================
+     WARNING SHADES
+     =========================== */
+  --color-warning-lighter: ${generated.warningLighter};
+  --color-warning-light: ${generated.warningLight};
+  --color-warning-dark: ${generated.warningDark};
+  --color-warning-darker: ${generated.warningDarker};
+
+  /* ===========================
+     ERROR SHADES
+     =========================== */
+  --color-error-lighter: ${generated.errorLighter};
+  --color-error-light: ${generated.errorLight};
+  --color-error-dark: ${generated.errorDark};
+  --color-error-darker: ${generated.errorDarker};
+
+  /* ===========================
+     FEEDBACK COLORS (semantic)
+     =========================== */
   --color-success: ${generated.success};
-  --color-warning: ${generated.warning};
-  --color-error: ${generated.error};
   --color-info: ${generated.info};
 
-  /* Semantic mappings */
+  /* ===========================
+     INFOBOX SPECIFIC COLORS
+     =========================== */
+  --color-info-bg: ${generated.infoBg};
+  --color-info-heading: ${generated.infoHeading};
+  --color-info-text: ${generated.infoText};
+
+  --color-warning-bg: ${generated.warningBg};
+  --color-warning-heading: ${generated.warningHeading};
+  --color-warning-text: ${generated.warningText};
+
+  --color-error-bg: ${generated.errorBg};
+  --color-error-heading: ${generated.errorHeading};
+  --color-error-text: ${generated.errorText};
+
+  /* ===========================
+     SEMANTIC MAPPINGS
+     =========================== */
   --color-primary: var(--color-brand);
   --color-secondary: var(--color-accent);
-  --color-text: #1f2937;
+  --color-text: var(--color-neutral-darker);
   --color-text-light: var(--color-neutral);
   --color-background: #ffffff;
-  --color-border: var(--color-neutral-light);
-}`;
+  --color-background-gray: #f9fafb;
+  --color-border: var(--color-neutral-light);`;
 }
