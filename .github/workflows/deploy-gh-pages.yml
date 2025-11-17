@@ -36,17 +36,21 @@ jobs:
 
       - name: Deploy to gh-pages
         run: |
-          # Fetch gh-pages branch or create it if it doesn't exist
-          git fetch origin gh-pages:gh-pages 2>/dev/null || git checkout --orphan gh-pages
+          # Save built files to temp directory
+          mkdir -p /tmp/gh-pages-build
+          cp -r index.html assets .nojekyll /tmp/gh-pages-build/ 2>/dev/null || true
 
-          # Switch to gh-pages branch
-          git checkout gh-pages || git checkout --orphan gh-pages
+          # Fetch and checkout gh-pages branch (create if doesn't exist)
+          git fetch origin gh-pages 2>/dev/null || true
+          git checkout gh-pages 2>/dev/null || git checkout --orphan gh-pages
 
-          # Remove all files except build artifacts
+          # Clear everything on gh-pages
           git rm -rf . 2>/dev/null || true
+          rm -rf * .* 2>/dev/null || true
 
-          # Copy built files from the working directory (they're gitignored on feature branch)
-          git checkout ${{ github.ref_name }} -- index.html assets .nojekyll 2>/dev/null || true
+          # Copy built files from temp
+          cp -r /tmp/gh-pages-build/* . 2>/dev/null || true
+          cp /tmp/gh-pages-build/.nojekyll . 2>/dev/null || true
 
           # Add and commit
           git add -A
