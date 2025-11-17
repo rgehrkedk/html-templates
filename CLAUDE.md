@@ -130,6 +130,7 @@ npm run build
 4. **Apple variant eksperiment** - Testede alternative designs (SLETTET)
 5. **Template builder** - React app til at bygge templates dynamisk
 6. **Streamline workflow (2025-11-17)** - Ændrede fra auto-merge-to-main til gh-pages deployment for at holde main branch ren
+7. **Comprehensive color & border-radius system (2025-11-17)** - Implementerede 5-farve system med 65+ CSS variables, 3 border-radius styles, og class-based styling (ingen inline styles)
 
 ### Design fokus:
 - **Minimalistisk** - Clean design uden overflødige effekter
