@@ -28,6 +28,12 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Merge to main
+        run: |
+          git fetch origin main:main || git checkout -b main
+          git checkout main
+          git merge --no-ff ${{ github.ref_name }} -m "Auto-merge ${{ github.ref_name }} to main"
+
       - name: Install dependencies
         run: npm install
 
@@ -38,11 +44,5 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git add index.html assets
             git commit -m "Auto-update built files for GitHub Pages"
+            git push origin main
           fi
-
-      - name: Merge to main
-        run: |
-          git fetch origin main:main || git checkout -b main
-          git checkout main
-          git merge --no-ff ${{ github.ref_name }} -m "Auto-merge ${{ github.ref_name }} to main"
-          git push origin main
