@@ -34,27 +34,25 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to gh-pages
+      - name: Deploy to main
         run: |
           # Save built files to temp directory
-          mkdir -p /tmp/gh-pages-build
-          cp -r index.html assets .nojekyll /tmp/gh-pages-build/ 2>/dev/null || true
+          mkdir -p /tmp/main-build
+          cp -r index.html assets .nojekyll /tmp/main-build/ 2>/dev/null || true
 
-          # Fetch and checkout gh-pages branch (create if doesn't exist)
-          git fetch origin gh-pages 2>/dev/null || true
-          git checkout gh-pages 2>/dev/null || git checkout --orphan gh-pages
+          # Fetch and checkout main branch
+          git fetch origin main
+          git checkout main
 
-          # Clear everything on gh-pages (keep .git directory!)
-          git rm -rf . 2>/dev/null || true
-          find . -maxdepth 1 ! -name '.git' ! -name '.' ! -name '..' -exec rm -rf {} + 2>/dev/null || true
+          # Update only the built assets (preserve source code!)
+          rm -rf assets/* 2>/dev/null || true
+          cp -r /tmp/main-build/index.html . 2>/dev/null || true
+          cp -r /tmp/main-build/assets/* assets/ 2>/dev/null || true
+          cp /tmp/main-build/.nojekyll . 2>/dev/null || true
 
-          # Copy built files from temp
-          cp -r /tmp/gh-pages-build/* . 2>/dev/null || true
-          cp /tmp/gh-pages-build/.nojekyll . 2>/dev/null || true
+          # Add and commit only if there are changes
+          git add index.html assets .nojekyll
+          git diff --staged --quiet || git commit -m "build: Auto-deploy from ${{ github.ref_name }} @ ${{ github.sha }}"
 
-          # Add and commit
-          git add -A
-          git commit -m "Deploy from ${{ github.ref_name }} @ ${{ github.sha }}" || echo "No changes to commit"
-
-          # Push to gh-pages
-          git push origin gh-pages --force
+          # Push to main
+          git push origin main
