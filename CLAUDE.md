@@ -1,6 +1,8 @@
 # Claude Project Context
 
-Dette dokument hjælper fremtidige Claude sessions med at forstå projektet og workflow.
+**Auto-læses ved start af hver Claude Code session**
+
+Dette dokument giver persistent kontekst til fremtidige Claude Code sessions.
 
 ## Projekt Oversigt
 
@@ -88,7 +90,7 @@ html-templates/
 ├── package.json                     # npm dependencies & scripts
 ├── vite.config.ts                   # Vite bundler config
 ├── README.md                        # Projekt dokumentation
-└── .claude.md                       # Dette dokument
+└── CLAUDE.md                        # Dette dokument (auto-læses af Claude Code)
 ```
 
 ## Vigtige Kommandoer
