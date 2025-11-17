@@ -1,4 +1,4 @@
-# HTML Templates til e-Boks Beskeder
+# HTML Templates til Beskeder
 
 En samling af sikre, responsive HTML/CSS skabeloner til e-Boks webview beskeder, med en moderne React-baseret demo landing page.
 
