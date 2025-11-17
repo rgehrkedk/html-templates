@@ -44,9 +44,9 @@ jobs:
           git fetch origin gh-pages 2>/dev/null || true
           git checkout gh-pages 2>/dev/null || git checkout --orphan gh-pages
 
-          # Clear everything on gh-pages
+          # Clear everything on gh-pages (keep .git directory!)
           git rm -rf . 2>/dev/null || true
-          rm -rf * .* 2>/dev/null || true
+          find . -maxdepth 1 ! -name '.git' ! -name '.' ! -name '..' -exec rm -rf {} + 2>/dev/null || true
 
           # Copy built files from temp
           cp -r /tmp/gh-pages-build/* . 2>/dev/null || true
