@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Årsbrev 2024 - Forsikring Nord</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8f0f7 100%);
+            padding: 2.5rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow:
+                0 1px 3px rgba(0, 0, 0, 0.06),
+                0 10px 40px rgba(66, 153, 225, 0.12);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .header-label {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.375rem 0.875rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .header .year {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        /* Intro Section */
+        .intro {
+            padding: 2rem;
+            background: linear-gradient(to bottom, #f7fafc 0%, #ffffff 100%);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .intro p {
+            font-size: 1rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        /* Welcome Badge */
+        .welcome-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #bee3f8 0%, #90cdf4 100%);
+            color: #2c5282;
+            padding: 0.625rem 1.125rem;
+            border-radius: 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            margin-top: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #e2e8f0;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        /* Accordion Styles */
+        details {
+            margin-bottom: 0.875rem;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #ffffff;
+        }
+
+        details:hover {
+            border-color: #cbd5e0;
+            box-shadow: 0 2px 8px rgba(66, 153, 225, 0.08);
+        }
+
+        details[open] {
+            border-color: #90cdf4;
+            box-shadow: 0 4px 12px rgba(66, 153, 225, 0.15);
+        }
+
+        summary {
+            padding: 1.25rem 1.5rem;
+            background: #f7fafc;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #2d3748;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #4299e1;
+            font-weight: 400;
+            transition: transform 0.3s ease;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        details[open] summary {
+            background: linear-gradient(135deg, #ebf8ff 0%, #e6f7ff 100%);
+            border-bottom: 1px solid #bee3f8;
+        }
+
+        details[open] summary::after {
+            content: '−';
+            transform: rotate(0deg);
+        }
+
+        summary:hover {
+            background: #edf2f7;
+        }
+
+        .accordion-content {
+            padding: 1.5rem;
+            background: #ffffff;
+        }
+
+        /* Insurance Card */
+        .insurance-card {
+            background: linear-gradient(to bottom, #f7fafc 0%, #ffffff 100%);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .insurance-card h4 {
+            color: #2d3748;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .policy-chip {
+            display: inline-block;
+            background: linear-gradient(135deg, #bee3f8 0%, #90cdf4 100%);
+            color: #2c5282;
+            padding: 0.25rem 0.75rem;
+            border-radius: 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .insurance-details {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.875rem;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #edf2f7;
+            font-size: 0.95rem;
+        }
+
+        .detail-label {
+            color: #718096;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .detail-value {
+            color: #2d3748;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .coverage-note {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, #c6f6d5 0%, #9ae6b4 100%);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            color: #22543d;
+            line-height: 1.6;
+            border-left: 3px solid #48bb78;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1.5px solid #e2e8f0;
+            transition: all 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(66, 153, 225, 0.15);
+            border-color: #90cdf4;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #718096;
+            font-weight: 600;
+            line-height: 1.4;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fef5e7 0%, #fef3c7 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box h4 {
+            color: #92400e;
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .highlight-box p {
+            color: #78350f;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Tag/Chip Labels */
+        .tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #bee3f8 0%, #90cdf4 100%);
+            color: #2c5282;
+            padding: 0.25rem 0.75rem;
+            border-radius: 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag.success {
+            background: linear-gradient(135deg, #c6f6d5 0%, #9ae6b4 100%);
+            color: #22543d;
+        }
+
+        .tag.warning {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            color: #78350f;
+        }
+
+        /* Simple List */
+        .simple-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .simple-list li {
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(to right, #f7fafc 0%, #ffffff 100%);
+            border-left: 3px solid #4299e1;
+            border-radius: 8px;
+        }
+
+        .simple-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .simple-list strong {
+            color: #2d3748;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .simple-list p {
+            color: #718096;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(to bottom, #f7fafc 0%, #edf2f7 100%);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer p {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .footer .contact {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #cbd5e1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-label {
+            font-size: 0.75rem;
+            color: #a0aec0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-value {
+            color: #2d3748;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .footer-meta {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.75rem;
+            color: #a0aec0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 640px) {
+            body {
+                padding: 1.5rem 0.5rem;
+            }
+
+            .container {
+                border-radius: 12px;
+            }
+
+            .header {
+                padding: 2rem 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.75rem;
+            }
+
+            .content, .intro {
+                padding: 1.5rem;
+            }
+
+            .footer {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.25rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .detail-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .detail-value {
+                text-align: left;
+            }
+
+            .footer .contact {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ============================================
+             HEADER SEKTION
+             ============================================ -->
+        <header class="header">
+            <div class="header-label">Forsikring Nord</div>
+            <h1>Dit Årsbrev</h1>
+            <p class="year">2024</p>
+        </header>
+
+        <!-- ============================================
+             INTRO SEKTION
+             ============================================ -->
+        <section class="intro">
+            <p>Kære Henrik Jensen, tak for endnu et år som kunde hos os. Vi er glade for at kunne give dig et klart overblik over dine forsikringer.</p>
+            <p>Du har været hos os i <strong>12 år</strong> – det sætter vi stor pris på.</p>
+            <div class="welcome-badge">
+                <span>✓</span> Loyalitetskunde siden 2012
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- ============================================
+                 FORSIKRINGSOVERSIGT
+                 ============================================ -->
+            <h2 class="section-title">
+                <span class="section-icon">1</span>
+                Dine forsikringer
+            </h2>
+
+            <!-- INDBOFORSIKRING -->
+            <details open>
+                <summary>Indboforsikring</summary>
+                <div class="accordion-content">
+                    <div class="insurance-card">
+                        <h4>
+                            Familiedækning
+                            <span class="policy-chip">IB-891234</span>
+                        </h4>
+                        <div class="insurance-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Adresse</span>
+                                <span class="detail-value">Søndergade 42, 3. tv, 8000 Aarhus C</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Forsikringssum</span>
+                                <span class="detail-value">1.200.000 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Årlig præmie</span>
+                                <span class="detail-value">4.280 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Din rabat</span>
+                                <span class="detail-value">18%</span>
+                            </div>
+                        </div>
+                        <div class="coverage-note">
+                            <strong>✓ Dækket:</strong> Brand, indbrud, vandskade, el-skade og ansvar. Inkluderer cykler, værdigenstande og elektronik.
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- BILFORSIKRING -->
+            <details>
+                <summary>Bilforsikring</summary>
+                <div class="accordion-content">
+                    <div class="insurance-card">
+                        <h4>
+                            VW Golf · Kasko
+                            <span class="policy-chip">BF-567890</span>
+                        </h4>
+                        <div class="insurance-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Registrering</span>
+                                <span class="detail-value">AA 12 345</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Årgang</span>
+                                <span class="detail-value">2021 · 1.5 TSI</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Årlig præmie</span>
+                                <span class="detail-value">7.240 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Skadefri bonus</span>
+                                <span class="detail-value">12 år · 25% rabat</span>
+                            </div>
+                        </div>
+                        <div class="coverage-note">
+                            <strong>✓ Tillykke!</strong> 12 års skadefri kørsel. Fuld kasko med vejhjælp 24/7 og fri glasdækning.
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- ULYKKESFORSIKRING -->
+            <details>
+                <summary>Ulykkesforsikring</summary>
+                <div class="accordion-content">
+                    <div class="insurance-card">
+                        <h4>
+                            Familie Plus
+                            <span class="policy-chip">UF-445566</span>
+                        </h4>
+                        <div class="insurance-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Dækker</span>
+                                <span class="detail-value">4 personer</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Invaliditetssum</span>
+                                <span class="detail-value">Op til 2.000.000 kr.</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Årlig præmie</span>
+                                <span class="detail-value">2.890 kr.</span>
+                            </div>
+                        </div>
+                        <div class="coverage-note">
+                            <strong>✓ Dækket døgnet rundt:</strong> Danmark og udlandet. Inkluderer tandskade og fysioterapi.
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- REJSEFORSIKRING -->
+            <details>
+                <summary>Rejseforsikring</summary>
+                <div class="accordion-content">
+                    <div class="insurance-card">
+                        <h4>
+                            Helår · Verden
+                            <span class="policy-chip">RF-778899</span>
+                        </h4>
+                        <div class="insurance-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Område</span>
+                                <span class="detail-value">Hele verden (inkl. USA)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Maks. rejselængde</span>
+                                <span class="detail-value">90 dage</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Årlig præmie</span>
+                                <span class="detail-value">3.650 kr.</span>
+                            </div>
+                        </div>
+                        <div class="coverage-note">
+                            <strong>✓ 24/7 alarmcentral:</strong> Sygdom, hjemtransport, afbestilling og bagage.
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- ============================================
+                 STATISTIK
+                 ============================================ -->
+            <h2 class="section-title">
+                <span class="section-icon">2</span>
+                Dit år i tal
+            </h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Skader i 2024</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">18.060</div>
+                    <div class="stat-label">Årlig præmie (kr)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4.120</div>
+                    <div class="stat-label">Rabat (kr)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Kundeår</div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 INFORMATIONER
+                 ============================================ -->
+            <h2 class="section-title">
+                <span class="section-icon">3</span>
+                Nyt i 2025
+            </h2>
+
+            <div class="highlight-box">
+                <h4>
+                    <span>📋</span> Prisjustering
+                </h4>
+                <p>Dine forsikringer reguleres med 2,8%. Din nye samlede årspræmie bliver 18.565 kr. Se opdaterede priser i selvbetjening fra d. 15. december.</p>
+            </div>
+
+            <details>
+                <summary>Nye fordele i 2025</summary>
+                <div class="accordion-content">
+                    <ul class="simple-list">
+                        <li>
+                            <strong>Gratis retshjælp</strong>
+                            <p>Din indboforsikring inkluderer nu gratis retshjælp op til 50.000 kr. ved tvister.</p>
+                        </li>
+                        <li>
+                            <strong>Cyberforsikring</strong>
+                            <p>Dækning ved identitetstyveri og hjælp til IT-sikkerhed – inkluderet gratis.</p>
+                        </li>
+                        <li>
+                            <strong>Udvidet klimadækning</strong>
+                            <p>Vi har udvidet dækningen for vandskader som følge af ekstremregn.</p>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>Personlige anbefalinger</summary>
+                <div class="accordion-content">
+                    <ul class="simple-list">
+                        <li>
+                            <strong>Tjek din forsikringssum</strong>
+                            <p>Sørg for at din indboforsikring afspejler den aktuelle værdi af dine ejendele.</p>
+                        </li>
+                        <li>
+                            <strong>Elcykler og værdifulde cykler</strong>
+                            <p>Husk at anmelde cykler over 25.000 kr. for fuld dækning.</p>
+                        </li>
+                        <li>
+                            <strong>Download vores app</strong>
+                            <p>Få hurtig adgang til forsikringsoversigt, anmeld skader og kontakt os direkte.</p>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Har du spørgsmål til dit årsbrev eller dine forsikringer?</p>
+            <div class="contact">
+                <div class="contact-item">
+                    <div class="contact-label">Kundeservice</div>
+                    <div class="contact-value">70 11 22 33</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">E-mail</div>
+                    <div class="contact-value">kontakt@forsikringnord.dk</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Selvbetjening</div>
+                    <div class="contact-value">forsikringnord.dk/min-side</div>
+                </div>
+            </div>
+            <div class="footer-meta">
+                © 2025 Forsikring Nord A/S · CVR-nr. 12345678
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
