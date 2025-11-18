@@ -48,7 +48,9 @@ jobs:
           git checkout main
 
           # Merge all source changes from the claude branch into main
-          git merge --no-edit ${{ github.sha }} -m "Merge source changes from ${{ github.ref_name }}"
+          # Use -X theirs to auto-resolve conflicts by taking claude branch version
+          # (we'll overwrite built files anyway)
+          git merge --no-edit -X theirs ${{ github.sha }} -m "Merge source changes from ${{ github.ref_name }}"
 
           # Overwrite with fresh built files
           rm -rf assets/* 2>/dev/null || true
