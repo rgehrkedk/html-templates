@@ -52,7 +52,8 @@ Dette projekt køres i **Claude Code Remote Sessions**:
    - Checker ud din `claude/*` branch
    - Kører `npm run build` → bygger til `dist/` folder
    - Checker ud `main` branch
-   - Kopierer ONLY built files (`index.html`, `assets/`, `templates/`) til `main`
+   - Merger ALLE source changes fra `claude/*` til `main`
+   - Overskriver med fresh built files (`index.html`, `assets/`, `templates/`)
    - Committer og pusher til `main` automatisk
 
 4. **GitHub Pages:**
@@ -146,8 +147,9 @@ git push -u origin claude/new-feature-[session-id]
 
 # GitHub Actions workflow starter automatisk:
 # 1. Bygger projektet (npm run build)
-# 2. Deployer built files til main branch
-# 3. GitHub Pages opdaterer automatisk
+# 2. Merger alle source changes til main branch
+# 3. Overskriver med fresh built files
+# 4. GitHub Pages opdaterer automatisk
 #
 # Vent 1-2 minutter → live på https://rgehrkedk.github.io/html-templates/
 ```
