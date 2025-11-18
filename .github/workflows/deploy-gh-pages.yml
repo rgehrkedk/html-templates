@@ -60,8 +60,9 @@ jobs:
           cp -r /tmp/main-build/templates/* templates/ 2>/dev/null || true
           cp /tmp/main-build/.nojekyll . 2>/dev/null || true
 
-          # Add built files and commit
-          git add index.html assets templates .nojekyll
+          # Add built files and commit (force-add assets since it's gitignored)
+          git add index.html templates .nojekyll
+          git add -f assets/
           git diff --staged --quiet || git commit -m "build: Update built assets from ${{ github.ref_name }} @ ${{ github.sha }}"
 
           # Push to main
