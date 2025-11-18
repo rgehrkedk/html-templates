@@ -43,11 +43,14 @@ jobs:
           cp -r dist/templates /tmp/main-build/ 2>/dev/null || true
           cp .nojekyll /tmp/main-build/ 2>/dev/null || true
 
-          # Fetch and checkout main branch (no stash needed now)
+          # Fetch and checkout main branch
           git fetch origin main
           git checkout main
 
-          # Update only the built assets (preserve source code!)
+          # Merge all source changes from the claude branch into main
+          git merge --no-edit ${{ github.sha }} -m "Merge source changes from ${{ github.ref_name }}"
+
+          # Overwrite with fresh built files
           rm -rf assets/* 2>/dev/null || true
           rm -rf templates/* 2>/dev/null || true
           cp -r /tmp/main-build/index.html . 2>/dev/null || true
@@ -55,9 +58,9 @@ jobs:
           cp -r /tmp/main-build/templates/* templates/ 2>/dev/null || true
           cp /tmp/main-build/.nojekyll . 2>/dev/null || true
 
-          # Add and commit only if there are changes
+          # Add built files and commit
           git add index.html assets templates .nojekyll
-          git diff --staged --quiet || git commit -m "build: Auto-deploy from ${{ github.ref_name }} @ ${{ github.sha }}"
+          git diff --staged --quiet || git commit -m "build: Update built assets from ${{ github.ref_name }} @ ${{ github.sha }}"
 
           # Push to main
           git push origin main
