@@ -5,5 +5,5 @@ dist/
 .env
 .vite
 src/styles/tokens/
-# Keep deployed assets for GitHub Pages
-!assets/
+# Built assets (deployed to main by GitHub Actions)
+assets/
