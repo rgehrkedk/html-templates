@@ -36,22 +36,27 @@ jobs:
 
       - name: Deploy to main
         run: |
-          # Save built files to temp directory
+          # Save built files to temp directory (before git operations)
           mkdir -p /tmp/main-build
-          cp -r index.html assets .nojekyll /tmp/main-build/ 2>/dev/null || true
+          cp -r dist/index.html /tmp/main-build/ 2>/dev/null || true
+          cp -r dist/assets /tmp/main-build/ 2>/dev/null || true
+          cp -r dist/templates /tmp/main-build/ 2>/dev/null || true
+          cp .nojekyll /tmp/main-build/ 2>/dev/null || true
 
-          # Fetch and checkout main branch
+          # Fetch and checkout main branch (no stash needed now)
           git fetch origin main
           git checkout main
 
           # Update only the built assets (preserve source code!)
           rm -rf assets/* 2>/dev/null || true
+          rm -rf templates/* 2>/dev/null || true
           cp -r /tmp/main-build/index.html . 2>/dev/null || true
           cp -r /tmp/main-build/assets/* assets/ 2>/dev/null || true
+          cp -r /tmp/main-build/templates/* templates/ 2>/dev/null || true
           cp /tmp/main-build/.nojekyll . 2>/dev/null || true
 
           # Add and commit only if there are changes
-          git add index.html assets .nojekyll
+          git add index.html assets templates .nojekyll
           git diff --staged --quiet || git commit -m "build: Auto-deploy from ${{ github.ref_name }} @ ${{ github.sha }}"
 
           # Push to main
