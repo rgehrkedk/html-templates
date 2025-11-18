@@ -75,7 +75,7 @@ Dette projekt køres i **Claude Code Remote Sessions**:
 - ✅ GitHub Pages serverer herfra
 
 ### Workflow fil
-`.github/workflows/deploy-gh-pages.yml` - Bygger og deployer automatisk til `main` ved push til `claude/**` branches.
+`.github/workflows/build-and-deploy.yml` - Bygger og deployer automatisk til `main` ved push til `claude/**` branches.
 
 ### Hvad betyder det?
 
@@ -106,7 +106,7 @@ Dette projekt køres i **Claude Code Remote Sessions**:
 html-templates/
 ├── .github/
 │   └── workflows/
-│       └── deploy-gh-pages.yml      # Auto-deploy workflow
+│       └── build-and-deploy.yml     # Auto-deploy workflow
 ├── src/                             # React app source code
 │   ├── builder/                     # Template builder components
 │   ├── main.tsx                     # App entry point
