@@ -10,6 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pages: write
+      id-token: write
+
+    # Allow only one concurrent deployment
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
 
     steps:
       - name: Checkout code
@@ -65,5 +72,17 @@ jobs:
           git add -f assets/
           git diff --staged --quiet || git commit -m "build: Update built assets from ${{ github.ref_name }} @ ${{ github.sha }}"
 
-          # Push to main (GitHub Pages should be configured to serve from main branch)
+          # Push to main
           git push origin main
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
