@@ -16,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem;
+  padding: 1.5rem;
   background: var(--theme-light-color-surface);
   border-bottom: 1px solid var(--theme-light-color-border);
 }
@@ -113,8 +113,32 @@
   border-color: #f87171;
 }
 
-.editForm {
+.preview {
+  border-top: 1px solid var(--theme-light-color-border);
+  background: #f9fafb;
+}
+
+.previewLabel {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--theme-light-color-text-secondary);
+  background: white;
+  border-bottom: 1px solid var(--theme-light-color-border);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.previewContent {
   padding: 1.5rem;
+  background: white;
+  min-height: 100px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.editForm {
+  padding: 2rem;
   background: #f9fafb;
   border-top: 1px solid var(--theme-light-color-border);
 }
@@ -201,6 +225,7 @@
     flex-direction: column;
     gap: 1rem;
     align-items: flex-start;
+    padding: 1.25rem;
   }
 
   .actions {
@@ -208,12 +233,66 @@
     justify-content: flex-end;
   }
 
+  .previewContent {
+    padding: 1.25rem;
+  }
+
+  .editForm {
+    padding: 1.5rem;
+  }
+
   .formActions {
     flex-direction: column-reverse;
+    gap: 0.75rem;
   }
 
   .cancelBtn,
   .saveBtn {
     width: 100%;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .previewLabel {
+    padding: 0.625rem 1rem;
+  }
+
+  .previewContent {
+    padding: 1rem;
+  }
+
+  .editForm {
+    padding: 1.25rem;
+  }
+
+  .info {
+    gap: 0.5rem;
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
+  }
+
+  .actions {
+    gap: 0.375rem;
+  }
+
+  .actionBtn,
+  .editBtn,
+  .removeBtn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.875rem;
+  }
+
+  .editBtn {
+    min-width: 50px;
   }
 }

@@ -1,7 +1,7 @@
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem;
 }
 
 .header {
@@ -242,6 +242,14 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
   .styleGrid,
   .radiusGrid {
     grid-template-columns: 1fr;
@@ -249,5 +257,24 @@
 
   .title {
     font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .section {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .styleCard,
+  .radiusCard {
+    padding: 1.25rem;
   }
 }

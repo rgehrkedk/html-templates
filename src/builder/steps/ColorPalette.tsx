@@ -176,6 +176,48 @@ export const ColorPalette: React.FC = () => {
           </div>
 
           <div className={styles.paletteSection}>
+            <h3 className={styles.sectionTitle}>Accent Shades</h3>
+            <div className={styles.swatchRow}>
+              <div className={styles.swatch} style={{ background: generated.accentLighter }}>
+                <span className={styles.swatchLabel}>Lighter</span>
+              </div>
+              <div className={styles.swatch} style={{ background: generated.accentLight }}>
+                <span className={styles.swatchLabel}>Light</span>
+              </div>
+              <div className={styles.swatch} style={{ background: localPalette.accent }}>
+                <span className={styles.swatchLabel}>Base</span>
+              </div>
+              <div className={styles.swatch} style={{ background: generated.accentDark }}>
+                <span className={styles.swatchLabel}>Dark</span>
+              </div>
+              <div className={styles.swatch} style={{ background: generated.accentDarker }}>
+                <span className={styles.swatchLabel}>Darker</span>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.paletteSection}>
+            <h3 className={styles.sectionTitle}>Neutral Shades</h3>
+            <div className={styles.swatchRow}>
+              <div className={styles.swatch} style={{ background: generated.neutralLighter }}>
+                <span className={styles.swatchLabel}>Lighter</span>
+              </div>
+              <div className={styles.swatch} style={{ background: generated.neutralLight }}>
+                <span className={styles.swatchLabel}>Light</span>
+              </div>
+              <div className={styles.swatch} style={{ background: localPalette.neutral }}>
+                <span className={styles.swatchLabel}>Base</span>
+              </div>
+              <div className={styles.swatch} style={{ background: generated.neutralDark }}>
+                <span className={styles.swatchLabel}>Dark</span>
+              </div>
+              <div className={styles.swatch} style={{ background: generated.neutralDarker }}>
+                <span className={styles.swatchLabel}>Darker</span>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.paletteSection}>
             <h3 className={styles.sectionTitle}>Warning Shades</h3>
             <div className={styles.swatchRow}>
               <div className={styles.swatch} style={{ background: generated.warningLighter }}>

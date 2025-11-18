@@ -1,7 +1,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem;
 }
 
 .header {
@@ -34,7 +34,7 @@
   background: white;
   border: 1px solid var(--theme-light-color-border);
   border-radius: 12px;
-  padding: 2rem;
+  padding: 2.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
@@ -69,8 +69,8 @@
 .sectionsContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 .sectionItem {
@@ -435,12 +435,34 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
   .title {
     font-size: 2rem;
   }
 
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .sectionsList {
+    padding: 1.5rem;
+  }
+
+  .sectionsContainer {
+    gap: 1rem;
+  }
+
   .pickerGrid {
     grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1rem;
   }
 
   .picker {
@@ -452,15 +474,46 @@
 
   .pickerContent {
     grid-template-columns: 1fr;
-    grid-template-rows: 200px 1fr;
+    grid-template-rows: 250px 1fr;
   }
 
   .variantList {
     border-right: none;
     border-bottom: 1px solid var(--theme-light-color-border);
+    padding: 1.25rem;
   }
 
   .previewPanel {
-    min-height: 300px;
+    min-height: 350px;
+  }
+
+  .previewContent {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .sectionsList {
+    padding: 1rem;
+  }
+
+  .pickerHeader {
+    padding: 1.25rem 1rem;
+  }
+
+  .pickerGrid {
+    padding: 1rem;
+  }
+
+  .variantList {
+    padding: 1rem;
+  }
+
+  .previewContent {
+    padding: 1rem;
   }
 }

@@ -1,7 +1,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem;
 }
 
 .header {
@@ -228,12 +228,29 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
   .title {
     font-size: 2rem;
   }
 
+  .subtitle {
+    font-size: 1rem;
+  }
+
   .summary {
     grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+
+  .codeBlock {
+    padding: 1.25rem;
   }
 
   .actions {
@@ -242,11 +259,14 @@
 
   .actionGroup {
     width: 100%;
+    flex-direction: column;
   }
 
+  .backButton,
   .resetButton,
+  .saveButton,
   .downloadButton {
-    flex: 1;
+    width: 100%;
   }
 
   .codeHeader {
@@ -258,5 +278,28 @@
   .copyButton,
   .copiedButton {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .summary {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .codeBlock {
+    padding: 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .backButton,
+  .resetButton,
+  .saveButton,
+  .downloadButton {
+    padding: 0.75rem 1.5rem;
   }
 }

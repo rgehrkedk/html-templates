@@ -75,7 +75,7 @@
 
 @media (max-width: 768px) {
   .progressBar {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
   }
 
   .stepLabel {
@@ -83,22 +83,31 @@
   }
 
   .stepNumber {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     font-size: 0.875rem;
   }
 
   .progressLine {
-    margin: 0 0.5rem;
+    margin: 0 0.75rem;
   }
 }
 
 @media (max-width: 480px) {
+  .progressBar {
+    padding: 1.25rem 0.75rem;
+  }
+
   .stepLabel {
     display: none;
   }
 
   .progressLine {
-    margin: 0 0.25rem;
+    margin: 0 0.5rem;
+  }
+
+  .stepNumber {
+    width: 32px;
+    height: 32px;
   }
 }
